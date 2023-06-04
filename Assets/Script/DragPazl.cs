@@ -36,7 +36,7 @@ public class DragPazl : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             SecondPos = new Vector2 (Input.mousePosition.x,Input.mousePosition.y);
-            currenSwipePos = new Vector2(currenSwipePos.x - firstPos.x, currenSwipePos.y - firstPos.y);
+            currenSwipePos = new Vector2(SecondPos.x - firstPos.x, SecondPos.y - firstPos.y);
             currenSwipePos.Normalize();
         }
         if(currenSwipePos.y > 0 && currenSwipePos.x >datectionButton && currenSwipePos.x < datetctionup)
