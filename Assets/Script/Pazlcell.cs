@@ -55,26 +55,27 @@ public class Pazlcell : MonoBehaviour
             mousePosNow.z = 0;
             Vector3 mouseposDif = mousePosNow - first_Pos;//押された位置からマウスの移動方向と距離
             Vector3 MovePiec = Piec_Now + mouseposDif;//現在位置にマウスの移動距離をたす
-            
+            //Vector3 MovePiec2 = Piec_Now + mouseposDif;
 
             //移動範囲設定
             if (Piec_Now2.x >= PicePos_Target2.x)
             {
-                MovePiec.x = Mathf.Clamp(MovePiec.x, PicePos_Target2.x, Piec_Now2.x);
+                MovePiec.x = Mathf.Clamp(MovePiec.x, PicePos_Target2.x, Piec_Now.x);
             }
             else
             {
-                MovePiec.x = Mathf.Clamp(MovePiec.x, Piec_Now2.x, PicePos_Target2.x);
+                MovePiec.x = Mathf.Clamp(MovePiec.x, Piec_Now.x, PicePos_Target2.x);
             }
             if (Piec_Now2.y >= PicePos_Target2.y)
             {
-                MovePiec.y = Mathf.Clamp(MovePiec.y, PicePos_Target2.y, Piec_Now2.y);
+                MovePiec.y = Mathf.Clamp(MovePiec.y, PicePos_Target2.y, Piec_Now.y);
             }
             else
             {
                 MovePiec.y = Mathf.Clamp(MovePiec.y, Piec_Now2.y, PicePos_Target2.y);
             }
-             if (Piec_Now.x >= PicePos_Target.x)
+
+            if (Piec_Now.x >= PicePos_Target.x)
             {
                 MovePiec.x = Mathf.Clamp(MovePiec.x, PicePos_Target.x, Piec_Now.x);
             }
@@ -92,14 +93,14 @@ public class Pazlcell : MonoBehaviour
             }
             //このスクリプトがついたPiceの移動制御
             Piec_Now = Vector3.Lerp(transform.position, MovePiec, 0.2f);
-            Piec_Now2 = Vector3.Lerp(transform.position, MovePiec, 0.2f);
+            //Piec_Now2 = Vector3.Lerp(transform.position, MovePiec2, 0.2f);
         }
             else
             {
                 if (isMovePice)
                 {
                     transform.position= PicePos_Target;//移動予定位置
-                    //transform.position = PicePos_Target2;
+                   // transform.position = PicePos_Target2; //ここがうまく機能しない
 
 				    //ClasesensingPazl.PosNumMovePosible(posNum_Now);//一つ用
 
@@ -107,7 +108,7 @@ public class Pazlcell : MonoBehaviour
                     posNum_Now = pos_Traget;//移動先の場所になる
                     posNum_Now2 = pos_Traget2;
               
-                    Piec_Now = PicePos_Target;
+                    Piec_Now = PicePos_Target;//番号と場所を移動先に変える
 				    Piec_Now2 = PicePos_Target2;
 
 				    isMovePice = false;
@@ -234,11 +235,6 @@ public class Pazlcell : MonoBehaviour
 			return;
 		}
 
-      
-        //Piec_Now = transform.position;
-        //PicePos_Target = Piec_Now;
-        //PicePos_Target.x += 1.0f;
-        //Debug.Log("Down");
     }
 
     public void MouseClickUp() 

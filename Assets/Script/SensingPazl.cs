@@ -41,7 +41,7 @@ public class SensingPazl : MonoBehaviour
         return  MovePossible;
     }
 
-	public (int id, int d1) MobePossble1()
+	public (int id, int id1) MobePossble1()
 	{
 
 		return (MovePossible, MovePossible1);
