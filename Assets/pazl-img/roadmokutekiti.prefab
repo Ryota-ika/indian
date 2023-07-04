@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1133179453763152837}
   - component: {fileID: 5238172085371846550}
   - component: {fileID: -7445727692449111065}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: roadmokutekiti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,6 +106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClasesensingPazl: {fileID: 0}
   Piec_Num: 0
+  PiecePrefub: {fileID: 0}
+  sprites: []
 --- !u!61 &5238172085371846550
 BoxCollider2D:
   m_ObjectHideFlags: 0
