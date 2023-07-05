@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5704778879737563521}
   - component: {fileID: 1952897364159906932}
   - component: {fileID: 6863675671939625459}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: "curves road\uFF12"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,6 +106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClasesensingPazl: {fileID: 0}
   Piec_Num: 0
+  PiecePrefub: {fileID: 0}
+  sprites: []
 --- !u!61 &1952897364159906932
 BoxCollider2D:
   m_ObjectHideFlags: 0
