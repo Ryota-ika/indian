@@ -8,7 +8,8 @@ public class Pazlcell : MonoBehaviour
 {
 
 
-
+	[SerializeField]
+	Vector2Int maxMapSize;
 
    
     bool touchFlag = false;//マウスが押されているとき
@@ -38,13 +39,13 @@ public class Pazlcell : MonoBehaviour
 
     //07-03
 	public SensingPazl PiecePrefub;
-    public SensingPazl[,] pieces = new SensingPazl[4, 5];
+    public SensingPazl[,] pieces = new SensingPazl[4,5];
     public Sprite[] sprites;
     // Start is called before the first frame update
     void Start()
     {
-       // Piece3x3();
-		Piece4x5();
+		//Piece3x3();
+		PieceInit();
 
   //      posNum_Now = Piec_Num;
   //posNum_Now2 = Piec_Num;
@@ -260,12 +261,12 @@ public class Pazlcell : MonoBehaviour
 
 
     //0703
-     void Piece4x5()
+     void PieceInit()
     {
         int n = 0;
-        for(int y =4; y >= 0; y--)
+        for(int y =maxMapSize.y; y >= 0; y--)
 		{
-            for (int x = 0; x < 4; x++)
+            for (int x = 0; x < maxMapSize.x; x++)
             {
                 SensingPazl Piece = Instantiate(PiecePrefub, new Vector2(x, y), Quaternion.identity);
                 Piece.Init(x, y, n + 1, sprites[n], ClickSwap);
@@ -289,7 +290,7 @@ public class Pazlcell : MonoBehaviour
             }
     }
 
-	void ClickSwap(int x,int y)
+	void ClickSwap(int x,int y)//pieceと何もない空間を入れ替えて配列情報を更新
 	{
 		var PieceX = GetPieceX(x,y);
 		var PieceY = GetPieceY(x,y);
@@ -305,7 +306,7 @@ public class Pazlcell : MonoBehaviour
 
 	}
 
-	int GetPieceX(int x,int y)
+	int GetPieceX(int x,int y)//引数で指定したところに隙間があったら移動させるための数値を返す
 	{
 		if (x < 3 && pieces[x + 1, y].IsEmpty())
 		{
@@ -319,17 +320,17 @@ public class Pazlcell : MonoBehaviour
 		return 0;
 	}
 
-	int GetPieceY(int  x,int y)
+	int GetPieceY(int x, int y)
 	{
-        if (y < 4 && pieces[x , y + 1].IsEmpty())
-        {
-            return 1;
-        }
+		if (y < 4 && pieces[x, y + 1].IsEmpty())
+		{
+			return 1;
+		}
 
-        if (y > 0 && pieces[x , y - 1].IsEmpty())
-        {
-            return -1;
-        }
-        return 0;
-    }
+		if (y > 0 && pieces[x, y - 1].IsEmpty())
+		{
+			return -1;
+		}
+		return 0;
+	}
 }
