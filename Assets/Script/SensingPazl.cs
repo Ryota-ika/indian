@@ -37,7 +37,6 @@ public class SensingPazl : MonoBehaviour
 	
     public int MovePossble()
     {
-        
         return  MovePossible;
     }
 

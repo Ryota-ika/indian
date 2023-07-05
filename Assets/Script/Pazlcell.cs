@@ -1,12 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Unity.UI;
 
 public class Pazlcell : MonoBehaviour
-{
-
-   
+{  
     bool touchFlag = false;//マウスが押されているとき
     bool isMovePice=false;//Piceの移動用（移動しているときはtrue）
 
@@ -28,14 +23,15 @@ public class Pazlcell : MonoBehaviour
     private int pos_Traget2;
     private int dif_PosNum, dif_PosNum2;
 
+    [SerializeField]
+    float moveDisance;
     public SensingPazl ClasesensingPazl;//呼び出し用
-    public int Piec_Num =0 ;//Piceの番号用
-
+    public int pice_Num =0 ;//Piceの番号用
     // Start is called before the first frame update
     void Start()
     {
-		posNum_Now = Piec_Num;
-		posNum_Now2 = Piec_Num;
+		posNum_Now = pice_Num;
+		posNum_Now2 = pice_Num;
 		Piec_Now = transform.position;
         Piec_Now2 = transform.position;
     }
@@ -51,48 +47,49 @@ public class Pazlcell : MonoBehaviour
 
         if (touchFlag)
         {
-            Vector3 mousePosNow = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mousePosNow = Camera.main.ScreenToWorldPoint(Input.mousePosition);//マウスの位置を算出
             mousePosNow.z = 0;
             Vector3 mouseposDif = mousePosNow - first_Pos;//押された位置からマウスの移動方向と距離
-            Vector3 MovePiec = Piec_Now + mouseposDif;//現在位置にマウスの移動距離をたす
+            Vector3 movePiece = Piec_Now + mouseposDif;//現在位置にマウスの移動距離をたす
             //Vector3 MovePiec2 = Piec_Now + mouseposDif;
 
             //移動範囲設定
             if (Piec_Now2.x >= PicePos_Target2.x)
             {
-                MovePiec.x = Mathf.Clamp(MovePiec.x, PicePos_Target2.x, Piec_Now.x);
+                movePiece.x = Mathf.Clamp(movePiece.x, PicePos_Target2.x, Piec_Now.x);
             }
             else
             {
-                MovePiec.x = Mathf.Clamp(MovePiec.x, Piec_Now.x, PicePos_Target2.x);
+                movePiece.x = Mathf.Clamp(movePiece.x, Piec_Now.x, PicePos_Target2.x);
             }
+
             if (Piec_Now2.y >= PicePos_Target2.y)
             {
-                MovePiec.y = Mathf.Clamp(MovePiec.y, PicePos_Target2.y, Piec_Now.y);
+                movePiece.y = Mathf.Clamp(movePiece.y, PicePos_Target2.y, Piec_Now.y);
             }
             else
             {
-                MovePiec.y = Mathf.Clamp(MovePiec.y, Piec_Now2.y, PicePos_Target2.y);
+                movePiece.y = Mathf.Clamp(movePiece.y, Piec_Now2.y, PicePos_Target2.y);
             }
 
             if (Piec_Now.x >= PicePos_Target.x)
             {
-                MovePiec.x = Mathf.Clamp(MovePiec.x, PicePos_Target.x, Piec_Now.x);
+                movePiece.x = Mathf.Clamp(movePiece.x, PicePos_Target.x, Piec_Now.x);
             }
             else
             {
-                MovePiec.x = Mathf.Clamp(MovePiec.x, Piec_Now.x, PicePos_Target.x);
+                movePiece.x = Mathf.Clamp(movePiece.x, Piec_Now.x, PicePos_Target.x);
             }
             if(Piec_Now.y>= PicePos_Target.y)
             {
-                MovePiec.y = Mathf.Clamp(MovePiec.y, PicePos_Target.y, Piec_Now.y);
+                movePiece.y = Mathf.Clamp(movePiece.y, PicePos_Target.y, Piec_Now.y);
             }
             else
             {
-                MovePiec.y = Mathf.Clamp(MovePiec.y, Piec_Now.y, PicePos_Target.y);
+                movePiece.y = Mathf.Clamp(movePiece.y, Piec_Now.y, PicePos_Target.y);
             }
             //このスクリプトがついたPiceの移動制御
-            Piec_Now = Vector3.Lerp(transform.position, MovePiec, 0.2f);
+            Piec_Now = Vector3.Lerp(transform.position, movePiece,0.2f);
             //Piec_Now2 = Vector3.Lerp(transform.position, MovePiec2, 0.2f);
         }
             else
@@ -154,8 +151,8 @@ public class Pazlcell : MonoBehaviour
         touchFlag = true;
         isMovePice = true;
 
-       /* pos_Traget = ClasesensingPazl.MovePossble();*/ //穴一つ用
-         (pos_Traget,pos_Traget2) = ClasesensingPazl.MobePossble1();///二つ用
+		/*pos_Traget = ClasesensingPazl.MovePossble();*/ //穴一つ用
+		(pos_Traget,pos_Traget2) = ClasesensingPazl.MobePossble1();///二つ用
         dif_PosNum = pos_Traget - posNum_Now;//移動予定位置の番号から現在の番号を引く
         PicePos_Target = Piec_Now;
 
@@ -237,16 +234,10 @@ public class Pazlcell : MonoBehaviour
 
     }
 
-    public void MouseClickUp() 
+    public void MouseClickUp()
     {
-        touchFlag =false;
+        touchFlag = false;
 
         Debug.Log("Up");
-    }
-
-
-
-
-
-  
+    } 
 }
