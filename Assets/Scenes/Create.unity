@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   Maxindex: 0
+  posIndex: {x: 0, y: 0}
   MovePossible: 9
 --- !u!114 &16280565
 MonoBehaviour:
@@ -370,6 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae20815a4653f343a3d3fb5d6271588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMapSize: {x: 0, y: 0}
   PiecePrefub: {fileID: 0}
   sprites: []
 --- !u!212 &18760393
@@ -2195,6 +2197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   Maxindex: 0
+  posIndex: {x: 0, y: 0}
   MovePossible: 10
 --- !u!114 &676440515
 MonoBehaviour:
@@ -2208,6 +2211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae20815a4653f343a3d3fb5d6271588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMapSize: {x: 0, y: 0}
   PiecePrefub: {fileID: 0}
   sprites: []
 --- !u!114 &767471552 stripped
@@ -4397,6 +4401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae20815a4653f343a3d3fb5d6271588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxMapSize: {x: 0, y: 0}
   PiecePrefub: {fileID: 0}
   sprites: []
 --- !u!1 &631369538422836587
@@ -4426,6 +4431,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1759522507127682456, guid: 5b2051e42a1b68d43b3020ff59ad4fa0, type: 3}
+      propertyPath: maxMapSize.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759522507127682456, guid: 5b2051e42a1b68d43b3020ff59ad4fa0, type: 3}
+      propertyPath: maxMapSize.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1759522507127682457, guid: 5b2051e42a1b68d43b3020ff59ad4fa0, type: 3}
       propertyPath: m_Name
       value: pazl
