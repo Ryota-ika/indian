@@ -40,7 +40,7 @@ public class Pazlcell : MonoBehaviour
 	// SensingPazl ClasesensingPazl;//呼び出し用
 	// public int Piec_Num =0 ;//Piceの番号用
     //07-03
-	SensingPazl[,] pieces = new SensingPazl[4,5];
+	SensingPazl[,] pieces = new SensingPazl[3,3];
     Sprite[] sprites;
 	[SerializeField]
 	//selialize指定するために一旦リストに格納することにしました。
@@ -306,33 +306,45 @@ public class Pazlcell : MonoBehaviour
 
 		pieces[x,y] = null;
 		pieces[x + PieceX, y + PieceY]= from;
-		from.UpdatePos(x, y,movePow);
+		from.UpdatePos(PieceX, PieceY,movePow);
 	}
 
 	int GetPieceX(int x,int y)//引数で指定したところに隙間があったら移動させるための数値を返す
 	{
-		if (x < maxMapSize.x && pieces[x + 1, y]==null)
+		if (x < maxMapSize.x-1)
 		{
-            return 1;
+			if (pieces[x + 1, y] == null)
+			{ 
+				return 1;	
+			}
         }
 			
-		if(x > 0 && pieces[x - 1, y]==null)
+		if(x > 0 )
 		{
-			return -1;
+			if (pieces[x - 1, y] == null)
+			{
+				return -1;
+			}
 		}
 		return 0;
 	}
 
 	int GetPieceY(int x, int y)
 	{
-		if (y < maxMapSize.y && pieces[x, y + 1]==null)
+		if (y < maxMapSize.y-1)
 		{
-			return 1;
+			if (pieces[x, y + 1] == null)
+			{
+				return 1;
+			}
 		}
 
-		if (y > 0 && pieces[x, y - 1]==null)
+		if (y > 0)
 		{
-			return -1;
+			if (pieces[x, y - 1] == null)
+			{
+				return -1;
+			}
 		}
 		return 0;
 	}
