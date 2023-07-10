@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.UI;
+using UnityEngine.Events;
 
 public class Pazlcell : MonoBehaviour
 {
@@ -17,16 +18,16 @@ public class Pazlcell : MonoBehaviour
 	Vector2Int voidPos;
     bool touchFlag = false;//マウスが押されているとき
     bool isMovePice=false;//Piceの移動用（移動しているときはtrue）
+	public static event UnityAction<Vector2Int,Vector2Int> swapTrrigerd;
+	//RectTransform r, r2;
+	//Vector2 m;
+	//Vector3 SecondPos;
+	//Vector3 currenSwipePos;
+	//float datectionButton = -0.8f;
+	//float datetctionup = 0.8f;
 
-    //RectTransform r, r2;
-    //Vector2 m;
-    //Vector3 SecondPos;
-    //Vector3 currenSwipePos;
-    //float datectionButton = -0.8f;
-    //float datetctionup = 0.8f;
 
-
-    Vector3 PicePos_Target, PicePos_Target2;//移動予定位置
+	Vector3 PicePos_Target, PicePos_Target2;//移動予定位置
     Vector3 first_Pos;//タップ時のポインターの位置
     Vector3 Piec_Now;//移動前の現在位置
     Vector3 Piec_Now2;//移動前の現在位置
@@ -52,13 +53,11 @@ public class Pazlcell : MonoBehaviour
     {
 		//Piece3x3();
 		PieceInit(voidPos);
-
-  //      posNum_Now = Piec_Num;
-  //posNum_Now2 = Piec_Num;
-  //Piec_Now = transform.position;
-  //      Piec_Now2 = transform.position;
     }
-
+	public SensingPazl[,] GetPices()
+	{
+		return pieces;
+	}
     // Update is called once per frame
     void Update()
     {
@@ -300,13 +299,15 @@ public class Pazlcell : MonoBehaviour
 	{
 		var PieceX = GetPieceX(x,y);
 		var PieceY = GetPieceY(x,y);
-
+		//X軸とY軸の移動量を取得
 		var from = pieces[x,y];
 		var target = pieces[x + PieceX, y + PieceY];
-
 		pieces[x,y] = null;
 		pieces[x + PieceX, y + PieceY]= from;
+		//fromとtargetを入れ替え
 		from.UpdatePos(PieceX, PieceY,movePow);
+		//入れ替わった位置を引数としてトリガーを発行
+		swapTrrigerd.Invoke(new Vector2Int(x, y), new Vector2Int(x + PieceX, y + PieceY));
 	}
 
 	int GetPieceX(int x,int y)//引数で指定したところに隙間があったら移動させるための数値を返す

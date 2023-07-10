@@ -44,25 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae20815a4653f343a3d3fb5d6271588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movePow: 0.25
+  maxMapSize: {x: 0, y: 0}
+  voidPos: {x: 0, y: 0}
   PiecePrefub: {fileID: 1887226155725739481, guid: 43a42ffca32e50640939064b110d7dab, type: 3}
-  sprites:
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: fc14e67806b937549a9afc646f1307c3, type: 3}
-  - {fileID: 21300000, guid: a505a4db4dc95a941a52e815ec282284, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: b6fc7c6d2da155543a0b612918840ef6, type: 3}
-  - {fileID: 21300000, guid: a5952e99c49235745ac29a1e2f90e68e, type: 3}
-  - {fileID: 21300000, guid: 81ef6920aba998c4893327546e15802f, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 21300000, guid: a0137bede86f7884baf6c4d52bd6a2f1, type: 3}
-  - {fileID: 0}
+  pieces_List: []

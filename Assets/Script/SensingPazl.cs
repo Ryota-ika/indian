@@ -45,12 +45,7 @@ public class SensingPazl : MonoBehaviour
         {
             swapFunc(posIndex.x,posIndex.y);
             Debug.Log("“ü‚Á‚Ä‚é");
-        }
-        
-    }
-
-    Vector2Int GetPosIndex() {
-        return posIndex;
+        }   
     }
     //Start is called before the first frame update
     void Start()
