@@ -5,7 +5,6 @@ using System.Security.Principal;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class SensingPazl : MonoBehaviour
 {
 	//public GameObject X, Y;
@@ -16,26 +15,23 @@ public class SensingPazl : MonoBehaviour
 	
     public int index = 0;
     public int Maxindex =0;
-    int x = 0;
-    int y=0;
-
+    [SerializeField]
+    Vector2Int posIndex;//自分の位置番号(xとyでばらばらになっていたためvec2intで統一しました)
     public int MovePossible =10; //空いている番号
-           int MovePossible1=20;
 
     private Action<int,int>swapFunc = null;
-    public void Init(int i ,int j,int index,Sprite sprite,Action<int ,int> swapFunc)
+    public void Init(int x ,int y,int index,Action<int ,int> swapFunc)
     {
         this.index = index;
-        this.GetComponent<SpriteRenderer>().sprite = sprite;
-        UpdatePos(i,j);
+        posIndex = new Vector2Int(x,y);
         this.swapFunc = swapFunc;
     }
 
-    public void UpdatePos(int i ,int j)
+    public void UpdatePos(int i ,int j,float moveScale)//数値を代入から加算へ+intの固定値での移動ではサイズ変更に対応できないため対応できる形に変更
     {
-        x = i;
-        y = j;
-        this.gameObject.transform.localPosition = new Vector2(i,j);
+        posIndex.x += i;
+        posIndex.y += j;
+        this.gameObject.transform.localPosition += new Vector3((float)i*moveScale,(float)j*moveScale,transform.localPosition.z);
     }
 
     public bool IsEmpty()
@@ -47,12 +43,10 @@ public class SensingPazl : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0)&& swapFunc != null)
         {
-            swapFunc(x,y);
+            swapFunc(posIndex.x,posIndex.y);
             Debug.Log("入ってる");
-        }
-        
+        }   
     }
-
     //Start is called before the first frame update
     void Start()
     {
