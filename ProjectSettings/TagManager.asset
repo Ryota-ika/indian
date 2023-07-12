@@ -7,6 +7,7 @@ TagManager:
   - Road_1A
   - player
   - Pazzle
+  - Wall
   layers:
   - Default
   - TransparentFX
