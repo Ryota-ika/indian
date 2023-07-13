@@ -8,6 +8,7 @@ TagManager:
   - player
   - Pazzle
   - Wall
+  - TurnRight
   layers:
   - Default
   - TransparentFX
