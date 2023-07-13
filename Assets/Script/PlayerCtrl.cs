@@ -12,6 +12,7 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] public RoadObject currentRoad;
     //次の道のオブジェクト
     [SerializeField] public RoadObject nextRoad;
+    float move_speed = 3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,8 @@ public class PlayerCtrl : MonoBehaviour
         {
         }
             player.transform.position += new Vector3(0, 0, 1)*Time.deltaTime;*/
+
+        MovePlayer();
         if (nextRoad != null)
         {
             if (currentRoad.roadDirection == nextRoad.roadDirection)
@@ -40,11 +43,29 @@ public class PlayerCtrl : MonoBehaviour
 
     private void MovePlayer()
     {
-        player.transform.position += new Vector3(0, 0, 1) * Time.deltaTime;
+
+        player.transform.position += new Vector3(0, 0, move_speed) * Time.deltaTime;
+
     }
 
     private void StopPlayer()
     {
         
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.name == "Wall")
+        {
+            move_speed = 0f;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag !="Wall")
+        {
+            MovePlayer();
+
+        }
     }
 }
