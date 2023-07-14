@@ -49,4 +49,8 @@ public class RoadManager : MonoBehaviour
     {
         
     }
+    public void AddToRoadList(GameObject item)
+    {
+        road_List.Add(item);
+    }
 }

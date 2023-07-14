@@ -349,4 +349,8 @@ public class Pazlcell : MonoBehaviour
 		}
 		return 0;
 	}
+	public void AddToPieceList(SensingPazl Piece)
+	{
+		pieces_List.Add(Piece);
+	}
 }
