@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Road_1A
   - player
+  - Pazzle
+  - Wall
+  - TurnRight
   layers:
   - Default
   - TransparentFX
