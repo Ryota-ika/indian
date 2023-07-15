@@ -1923,7 +1923,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 841451969}
-  - component: {fileID: 841451970}
   m_Layer: 0
   m_Name: corner
   m_TagString: Untagged
@@ -1949,20 +1948,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &841451970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841451968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d4910c051a0a74f8215eaeb5f93167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roadDirection: 0
-  nextRoad: {fileID: 0}
 --- !u!1001 &844311521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3437,8 +3422,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  currentRoad: {fileID: 1655855298}
-  nextRoad: {fileID: 841451970}
+  move_speed: 13
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &1546508568
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3719,8 +3704,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d4910c051a0a74f8215eaeb5f93167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roadDirection: 0
-  nextRoad: {fileID: 1655855298}
 --- !u!4 &1668192070 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5c9523c21fc7b43ec9c9bd22fff94472, type: 3}
