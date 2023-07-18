@@ -12,6 +12,7 @@ public class ChangeScreen : MonoBehaviour
     public TextMeshProUGUI on_off_text;
     private bool on_off_button;
 
+   
     private void Awake()
     {
         //PlayerCtrl = FindObjectOfType<PlayerCtrl>();
@@ -21,6 +22,7 @@ public class ChangeScreen : MonoBehaviour
     {
         //PlayerCtrl.MovePlayer();
         on_off_button = true;
+      
     }
     
     public void OnClick()
@@ -28,6 +30,7 @@ public class ChangeScreen : MonoBehaviour
         on_off_button = !on_off_button;
         if ( on_off_button == true)
         {
+           
             on_off_text.text = "Create";
             Panel.SetActive(false);
             PlayerCtrl.move_speed = 13f;
@@ -35,6 +38,7 @@ public class ChangeScreen : MonoBehaviour
         }
         else
         {
+           
             on_off_text.text = "Return";
             Panel.SetActive(true);
             PlayerCtrl.StopPlayer();

@@ -66,7 +66,7 @@ public class PlayerCtrl : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.name == "Wall")
+        if (collision.gameObject.tag == "Wall")
         {
             StopPlayer();
         }
