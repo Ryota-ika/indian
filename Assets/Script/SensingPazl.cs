@@ -39,9 +39,9 @@ public class SensingPazl : MonoBehaviour
         return index == Maxindex;
     }
 
-    void OnMouseDown()
+    public void OnMouseDown()
     {
-        if(Input.GetMouseButtonDown(0)&& swapFunc != null)
+        if(Input.GetMouseButtonDown(0) && swapFunc != null)
         {
             swapFunc(posIndex.x,posIndex.y);
             Debug.Log("“ü‚Á‚Ä‚é");

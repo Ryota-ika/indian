@@ -67,8 +67,7 @@ public class InitPieces : EditorWindow
 	}
 	GameObject CreatePanel(GameObject panel,Quaternion rotation,Transform parent,Vector2 pos)
 	{
-		Debug.Log(panel.transform.localScale);
-	  GameObject g=Instantiate(panel,new Vector3(panel.transform.localScale.x*pos.x,panel.transform.localScale.y*pos.y,0),rotation);
+	  GameObject g=Instantiate(panel,new Vector3(panel.transform.localScale.x*pos.x,panel.transform.localScale.y*pos.y,0),Quaternion.identity);
 		g.transform.parent = parent;
 		return g;
 	}

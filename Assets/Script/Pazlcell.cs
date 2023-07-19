@@ -41,7 +41,7 @@ public class Pazlcell : MonoBehaviour
 	// SensingPazl ClasesensingPazl;//呼び出し用
 	// public int Piec_Num =0 ;//Piceの番号用
     //07-03
-	SensingPazl[,] pieces = new SensingPazl[3,3];
+	SensingPazl[,] pieces = new SensingPazl[4,4];
     Sprite[] sprites;
 	[SerializeField]
 	//selialize指定するために一旦リストに格納することにしました。
@@ -52,7 +52,7 @@ public class Pazlcell : MonoBehaviour
     void Start()
     {
 		//Piece3x3();
-		PieceInit(voidPos);
+		PieceInit(voidPos,maxMapSize);
     }
 	public SensingPazl[,] GetPices()
 	{
@@ -267,9 +267,10 @@ public class Pazlcell : MonoBehaviour
 
     //0703
 	//プロパティを参照することで生成関数を可変にしました
-     void PieceInit(Vector2Int voidPos)
+     void PieceInit(Vector2Int voidPos,Vector2Int MapSize)
     {
         int n = 0;
+		pieces = new SensingPazl[MapSize.x,MapSize.y];
 		if (maxMapSize.x * maxMapSize.y != pieces_List.Count)
 		{
 			Debug.LogError("マップサイズの指定とパズルピースの多さが一致しません");
@@ -283,7 +284,6 @@ public class Pazlcell : MonoBehaviour
 				if (new Vector2Int(x, y) == voidPos)
 				{
 					pieces[x,y] = null;
-					Destroy(pieces_List[n].gameObject);
 					n++;
 					continue;
 				}
