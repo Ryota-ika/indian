@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 public class ChangeScreen : MonoBehaviour
 {
-    public PlayerCtrl PlayerCtrl;
+    public PlayerCtrl playerCtrl;
     public GameObject Panel;
-    public TextMeshProUGUI on_off_text;
-    private bool on_off_button;
+    public TextMeshProUGUI onOffText;
+    private bool onOffButton;
 
    
     private void Awake()
@@ -21,27 +21,27 @@ public class ChangeScreen : MonoBehaviour
     void Start()
     {
         //PlayerCtrl.MovePlayer();
-        on_off_button = true;
+        onOffButton = true;
       
     }
     
     public void OnClick()
     {
-        on_off_button = !on_off_button;
-        if ( on_off_button == true)
+        onOffButton = !onOffButton;
+        if ( onOffButton == true)
         {
            
-            on_off_text.text = "Create";
+            onOffText.text = "Create";
             Panel.SetActive(false);
-            PlayerCtrl.move_speed = 13f;
-            PlayerCtrl.MovePlayer();
+            playerCtrl.moveSpeed = 13f;
+            playerCtrl.MovePlayer();
         }
         else
         {
            
-            on_off_text.text = "Return";
+            onOffText.text = "Return";
             Panel.SetActive(true);
-            PlayerCtrl.StopPlayer();
+            playerCtrl.StopPlayer();
         }
     }
 }

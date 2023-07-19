@@ -9,8 +9,8 @@ public class PlayerCtrl : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     //現在の道のオブジェクト
-    public float move_speed = 13f;
-    private bool turn_right = false;
+    public float moveSpeed = 13f;
+    private bool turnRight = false;
     public Quaternion targetRotation;
     // Start is called before the first frame update
     void Start()
@@ -42,26 +42,26 @@ public class PlayerCtrl : MonoBehaviour
 
     public void MovePlayer()
     {
-        if (turn_right)
+        if (turnRight)
         {
             //targetRotationからplayerのrotationに値を渡す。
             player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, 90f * Time.deltaTime);
             if (player.transform.rotation == targetRotation)
             {
-                turn_right = false;
-                player.transform.position += player.transform.forward * move_speed * Time.deltaTime;
+                turnRight = false;
+                player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
             }
         }
         else
         {
-            player.transform.position += player.transform.forward * move_speed * Time.deltaTime;
+            player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
         }
 
     }
 
     public void StopPlayer()
     {
-        move_speed = 0f;
+        moveSpeed = 0f;
     }
 
     private void OnCollisionStay(Collision collision)
@@ -83,7 +83,7 @@ public class PlayerCtrl : MonoBehaviour
     {
         if(collision.gameObject.tag == "TurnRight")
         {
-            turn_right = true;
+            turnRight = true;
             //y軸を中心に回転
             targetRotation = player.transform.rotation * Quaternion.Euler(0f, 90f, 0f);    
         }
