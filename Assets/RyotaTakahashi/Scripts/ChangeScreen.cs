@@ -31,7 +31,7 @@ public class ChangeScreen : MonoBehaviour
         if ( onOffButton == true)
         {
            
-            onOffText.text = "Create";
+            //onOffText.text = "Create";
             Panel.SetActive(false);
             playerCtrl.moveSpeed = 13f;
             playerCtrl.MovePlayer();
@@ -39,7 +39,7 @@ public class ChangeScreen : MonoBehaviour
         else
         {
            
-            onOffText.text = "Return";
+            //onOffText.text = "Return";
             Panel.SetActive(true);
             playerCtrl.StopPlayer();
         }
