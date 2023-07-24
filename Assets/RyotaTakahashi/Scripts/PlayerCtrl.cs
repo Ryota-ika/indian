@@ -12,51 +12,69 @@ public class PlayerCtrl : MonoBehaviour
     public float moveSpeed = 13f;
     private bool turnRight = false;
     public Quaternion targetRotation;
+    [SerializeField] private Vector3 center = Vector3.zero;
+    [SerializeField] private Vector3 axis = Vector3.up;
+    [SerializeField] private float speed = 1f;
+
+    private float timer = 0;
+    private bool circleMovementInProgress=false;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("player");
+
+       /* Vector3 directionToCenter = center - player.transform.position;
+        _targetRotatioin = Mathf.Atan2(directionToCenter.z, directionToCenter.x) * Mathf.Rad2Deg - 90;*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (player.tag == "Road_1A")
-        {
-        }
-            player.transform.position += new Vector3(0, 0, 1)*Time.deltaTime;*/
-
+        //player.transform.position += new Vector3(0, 0, 1)*Time.deltaTime;
         MovePlayer();
-        /*if (nextRoad != null)
-        {
-            if (currentRoad.roadDirection == nextRoad.roadDirection)
+    }
+
+    /*if (turnRight)
             {
-                MovePlayer();
+                //targetRotationÇ©ÇÁplayerÇÃrotationÇ…ílÇìnÇ∑ÅB
+                player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, 90f * Time.deltaTime);
+                if (player.transform.rotation == targetRotation)
+                {
+                    turnRight = false;
+                    player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+                }
+
             }
             else
             {
-                StopPlayer();
-            }
-        }*/
-    }
-
+                player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+            }*/
     public void MovePlayer()
     {
+
+        //player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
         if (turnRight)
         {
-            //targetRotationÇ©ÇÁplayerÇÃrotationÇ…ílÇìnÇ∑ÅB
-            player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, 90f * Time.deltaTime);
-            if (player.transform.rotation == targetRotation)
+            Quaternion rotation = Quaternion.FromToRotation(transform.up, transform.right);
+            if (timer <= 3f)
             {
-                turnRight = false;
-                player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+            //í èÌÇÃâ~â^ìÆ
+            float rotaionAngle = speed * Time.deltaTime;
+            player.transform.RotateAround(player.transform.position, axis, rotaionAngle);
+            /*player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;*/
+            timer = timer + 1;
+                player.transform.rotation = Quaternion.Lerp(transform.rotation, rotation,timer+1);
+            }
+            else
+            {
+                turnRight=false;
             }
         }
         else
         {
             player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
-        }
 
+        }
     }
 
     public void StopPlayer()
@@ -85,7 +103,8 @@ public class PlayerCtrl : MonoBehaviour
         {
             turnRight = true;
             //yé≤ÇíÜêSÇ…âÒì]
-            targetRotation = player.transform.rotation * Quaternion.Euler(0f, 90f, 0f);    
+            //targetRotation = player.transform.rotation * Quaternion.Euler(0f, 90f, 0f);
+            /*player.transform.RotateAround(center,axis,360/period*Time.deltaTime);*/
         }
     }
 }

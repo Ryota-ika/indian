@@ -1220,6 +1220,9 @@ MonoBehaviour:
   player: {fileID: 0}
   moveSpeed: 13
   targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  center: {x: 0, y: 0, z: 0}
+  axis: {x: 0, y: 1, z: 0}
+  speed: 90
 --- !u!23 &861989889
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2544,8 +2547,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8965156833563459468, guid: e47a98fc5799f3944acfec1841ebf874, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965156833563459468, guid: e47a98fc5799f3944acfec1841ebf874, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.59
+      value: -5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e47a98fc5799f3944acfec1841ebf874, type: 3}
