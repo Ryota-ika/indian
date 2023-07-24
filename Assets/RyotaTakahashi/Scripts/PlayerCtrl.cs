@@ -15,8 +15,9 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] private Vector3 center = Vector3.zero;
     [SerializeField] private Vector3 axis = Vector3.up;
     [SerializeField] private float speed = 1f;
-
+    private Quaternion rotation;
     private float timer = 0;
+    private float rotationTime = 3f;
     private bool circleMovementInProgress=false;
     // Start is called before the first frame update
     void Start()
@@ -55,15 +56,20 @@ public class PlayerCtrl : MonoBehaviour
         //player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
         if (turnRight)
         {
-            Quaternion rotation = Quaternion.FromToRotation(transform.up, transform.right);
-            if (timer <= 3f)
+            //1‰ñ‚¾‚¯ˆ—‚·‚é
+            if (timer <= 0) { 
+            rotation = Quaternion.FromToRotation(transform.forward, transform.right);
+            }
+            if (timer <= 1f)
             {
-            //’Êí‚Ì‰~‰^“®
-            float rotaionAngle = speed * Time.deltaTime;
-            player.transform.RotateAround(player.transform.position, axis, rotaionAngle);
-            /*player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;*/
-            timer = timer + 1;
-                player.transform.rotation = Quaternion.Lerp(transform.rotation, rotation,timer+1);
+                //’Êí‚Ì‰~‰^“®
+                /*float rotaionAngle = speed * Time.deltaTime;*/
+                /*player.transform.RotateAround(player.transform.position, axis, rotaionAngle);*/
+                
+                player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+                player.transform.rotation = Quaternion.Lerp(transform.rotation, rotation,timer);
+                timer = timer /rotationTime + Time.deltaTime;
+                Debug.Log(timer);
             }
             else
             {
