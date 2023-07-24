@@ -41,7 +41,7 @@ public class Pazlcell : MonoBehaviour
 	// SensingPazl ClasesensingPazl;//呼び出し用
 	// public int Piec_Num =0 ;//Piceの番号用
     //07-03
-	SensingPazl[,] pieces = new SensingPazl[4,4];
+	SensingPazl[,] pieces;
     Sprite[] sprites;
 	[SerializeField]
 	//selialize指定するために一旦リストに格納することにしました。

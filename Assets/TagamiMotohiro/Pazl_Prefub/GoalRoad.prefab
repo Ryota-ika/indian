@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2869106549374548262}
   m_Layer: 3
   m_Name: GoalRoad
-  m_TagString: Untagged
+  m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a505a4db4dc95a941a52e815ec282284, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6088c5dfbc3fd124d8de0448184c3f3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
