@@ -27,13 +27,14 @@ public class ChangeImageButtom : MonoBehaviour
         on_off_button = !on_off_button;
         if (on_off_button == true)
         {
-            btnImage.sprite = Cratesprite;
+            btnImage.sprite = Bikesprite;
             
         }
         else
         {
-            btnImage.sprite = Bikesprite;
-           
+            btnImage.sprite = Cratesprite;
+
+
         }
     }
     
