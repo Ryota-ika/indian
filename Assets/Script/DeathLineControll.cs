@@ -13,28 +13,58 @@ public class DeathLineControll : MonoBehaviour
     [Header("プレイヤー(追跡対象)")]
     [SerializeField]
     Transform player;
+    [Header("プレイヤー位置記録頻度")]
+    [SerializeField]
+    float saveLate;
+    [Header("プレイヤー位置情報保持数上限")]
+    [SerializeField]
+    int maxPlayerDataNum;
+
+
     bool isStart=false;
-    Vector3 latePos;
+    [SerializeField]
+    List<Vector3> playerPath = new List<Vector3>();
+    [SerializeField]
+    Vector3 targetPos=new Vector3();
+    float timer;
+    int nextTargetIndex;
     // Start is called before the first frame update
     void Start()
     {
-        latePos = transform.position;
+        StartCoroutine(StartCount());
+        StartCoroutine(GetPlayerPos());
+        targetPos = GetNextPoint();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isStart) { return; }
-        StartCoroutine(GetRatePos(startTime));
-        transform.position = latePos;
+        if (!isStart) { return; }
+        if (Vector3.Distance(transform.position,targetPos)<=0.1f) {
+            targetPos = GetNextPoint();
+        }
     }
-    IEnumerator GetRatePos(float waitTime)
+	private void FixedUpdate()
+	{
+        if (!isStart) { return; }
+        transform.LookAt(player);
+        Vector3 movevecter = targetPos - transform.position;
+        if (movevecter.magnitude<=1) {
+            movevecter = player.position - transform.position;
+        }
+        transform.position += (movevecter.normalized*Time.deltaTime)*speed;
+	}
+    IEnumerator GetPlayerPos()//プレイヤーの情報を一定間隔で保存
     {
-        Vector3 nowPos = player.position;
-        yield return new WaitForSeconds(waitTime);
-        latePos = nowPos;
+        while (true) {
+            playerPath.Add(player.position);
+            if (playerPath.Count >= maxPlayerDataNum) {
+                playerPath.RemoveAt(0);
+            }
+            yield return new WaitForSeconds(saveLate);
+        }
     }
-    IEnumerator StartCount()//スタートするまで待機するコルーチン
+	IEnumerator StartCount()//スタートするまで待機するコルーチン
     {
         float time=0;
         while (time<=startTime) {
@@ -44,5 +74,17 @@ public class DeathLineControll : MonoBehaviour
         Debug.Log("幽霊が動き出した");
         isStart = true;
 
+    }
+    Vector3 GetNextPoint()
+    {
+        Vector3 point;
+        if (playerPath.Count == 0)
+        {
+            point = player.transform.position;
+        }
+        else {
+            point = playerPath[playerPath.Count-1];
+        }
+        return point;
     }
 }

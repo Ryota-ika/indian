@@ -1937,8 +1937,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 3
-  speed: 0
+  speed: 10
   player: {fileID: 861989891}
+  saveLate: 1
+  maxPlayerDataNum: 5
+  playerPath: []
+  targetPos: {x: 0, y: 0, z: 0}
 --- !u!135 &1696019803
 SphereCollider:
   m_ObjectHideFlags: 0
