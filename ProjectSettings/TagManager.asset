@@ -9,6 +9,7 @@ TagManager:
   - Pazzle
   - Wall
   - TurnRight
+  - TurnLeft
   layers:
   - Default
   - TransparentFX

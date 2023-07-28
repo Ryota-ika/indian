@@ -1,4 +1,4 @@
-//7/10
+//7/25
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -11,52 +11,137 @@ public class PlayerCtrl : MonoBehaviour
     //åªç›ÇÃìπÇÃÉIÉuÉWÉFÉNÉg
     public float moveSpeed = 13f;
     private bool turnRight = false;
+    private bool turnLeft = false;
     public Quaternion targetRotation;
+    [SerializeField] private Vector3 center = Vector3.zero;
+    [SerializeField] private Vector3 axis = Vector3.up;
+    [SerializeField] private float speed = 1f;
+    private Quaternion rightRotation;
+    private Quaternion leftRotation;
+    private float timer = 0;
+    private float rotationTime = 3f;
+    private bool circleMovementInProgress = false;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("player");
+
+        /* Vector3 directionToCenter = center - player.transform.position;
+         _targetRotatioin = Mathf.Atan2(directionToCenter.z, directionToCenter.x) * Mathf.Rad2Deg - 90;*/
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (player.tag == "Road_1A")
-        {
-        }
-            player.transform.position += new Vector3(0, 0, 1)*Time.deltaTime;*/
-
-        MovePlayer();
-        /*if (nextRoad != null)
-        {
-            if (currentRoad.roadDirection == nextRoad.roadDirection)
-            {
-                MovePlayer();
-            }
-            else
-            {
-                StopPlayer();
-            }
-        }*/
-    }
-
-    public void MovePlayer()
-    {
+        //player.transform.position += new Vector3(0, 0, 1)*Time.deltaTime;
         if (turnRight)
         {
-            //targetRotationÇ©ÇÁplayerÇÃrotationÇ…ílÇìnÇ∑ÅB
-            player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, 90f * Time.deltaTime);
-            if (player.transform.rotation == targetRotation)
-            {
-                turnRight = false;
-                player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
-            }
+            MoveTurnRight();
+        }else if(turnLeft){
+            MoveTurnLeft();
         }
         else
         {
-            player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+            MovePlayer();
         }
+    }
 
+    /*if (turnRight)
+            {
+                //targetRotationÇ©ÇÁplayerÇÃrotationÇ…ílÇìnÇ∑ÅB
+                player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, 90f * Time.deltaTime);
+                if (player.transform.rotation == targetRotation)
+                {
+                    turnRight = false;
+                    player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+                }
+
+            }
+            else
+            {
+                player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+            }*/
+    public void MovePlayer()
+    {
+
+        /*//player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+        if (turnRight)
+        {
+            //1âÒÇæÇØèàóùÇ∑ÇÈ
+            if (timer <= 0) { 
+            rotation = Quaternion.FromToRotation(transform.forward, transform.right);
+            }
+            if (timer <= 1f)
+            {
+                //í èÌÇÃâ~â^ìÆ
+                *//*float rotaionAngle = speed * Time.deltaTime;*/
+        /*player.transform.RotateAround(player.transform.position, axis, rotaionAngle);*//*
+
+        player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+        player.transform.rotation = Quaternion.Lerp(transform.rotation, rotation,timer);
+        timer = timer /rotationTime + Time.deltaTime;
+        Debug.Log(timer);
+    }
+    else
+    {
+        turnRight=false;
+    }
+}
+else
+{
+    player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+
+}*/
+        player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+
+    }
+
+    private void MoveTurnRight()
+    {
+        //1âÒÇæÇØèàóùÇ∑ÇÈ
+        if (timer <= 0)
+        {
+            rightRotation = Quaternion.FromToRotation(transform.forward, transform.right);
+        }
+        if (timer <= 1f)
+        {
+            //í èÌÇÃâ~â^ìÆ
+            /*float rotaionAngle = speed * Time.deltaTime;*/
+            /*player.transform.RotateAround(player.transform.position, axis, rotaionAngle);*/
+
+            player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+            player.transform.rotation = Quaternion.Lerp(transform.rotation, rightRotation, timer);
+            timer = timer / rotationTime + Time.deltaTime;
+
+        }
+        else
+        {
+            turnRight = false;
+        }
+    }
+
+    private void MoveTurnLeft()
+    {
+        //1âÒÇæÇØèàóùÇ∑ÇÈ
+        if (timer <= 0)
+        {
+            leftRotation = Quaternion.FromToRotation(transform.forward, -transform.right);
+        }
+        if (timer <= 1f)
+        {
+            //í èÌÇÃâ~â^ìÆ
+            /*float rotaionAngle = speed * Time.deltaTime;*/
+            /*player.transform.RotateAround(player.transform.position, axis, rotaionAngle);*/
+            timer += Time.deltaTime / rotationTime;
+            player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+            player.transform.rotation = Quaternion.Lerp(transform.rotation, leftRotation, timer);
+            //timer = timer / rotationTime + Time.deltaTime;
+            Debug.Log(timer);
+        }
+        else
+        {
+            turnLeft = false;
+        }
     }
 
     public void StopPlayer()
@@ -73,7 +158,7 @@ public class PlayerCtrl : MonoBehaviour
     }
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag !="Wall")
+        if (collision.gameObject.tag != "Wall")
         {
             MovePlayer();
 
@@ -81,11 +166,16 @@ public class PlayerCtrl : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "TurnRight")
+        if (collision.gameObject.tag == "TurnRight")
         {
             turnRight = true;
             //yé≤ÇíÜêSÇ…âÒì]
-            targetRotation = player.transform.rotation * Quaternion.Euler(0f, 90f, 0f);    
+            //targetRotation = player.transform.rotation * Quaternion.Euler(0f, 90f, 0f);
+            /*player.transform.RotateAround(center,axis,360/period*Time.deltaTime);*/
+        }
+        if (collision.gameObject.tag == "TurnLeft")
+        {
+            turnLeft = true;
         }
     }
 }

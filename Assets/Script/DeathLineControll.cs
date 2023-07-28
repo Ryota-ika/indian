@@ -40,7 +40,7 @@ public class DeathLineControll : MonoBehaviour
     void Update()
     {
         if (!isStart) { return; }
-        if (Vector3.Distance(transform.position,targetPos)<=0.1f) {
+        if (Vector3.Distance(transform.position,targetPos)<=1) {//ターゲットの位置に近づいたらターゲット変更
             targetPos = GetNextPoint();
         }
     }
@@ -48,11 +48,8 @@ public class DeathLineControll : MonoBehaviour
 	{
         if (!isStart) { return; }
         transform.LookAt(player);
-        Vector3 movevecter = targetPos - transform.position;
-        if (movevecter.magnitude<=1) {
-            movevecter = player.position - transform.position;
-        }
-        transform.position += (movevecter.normalized*Time.deltaTime)*speed;
+        Vector3 movevecter = targetPos - transform.position;//ターゲットの位置に向かうベクトルを生成
+        transform.position += (movevecter.normalized*Time.deltaTime)*speed;//向かう量を1で正規化し、そこに速さをかける
 	}
     IEnumerator GetPlayerPos()//プレイヤーの情報を一定間隔で保存
     {
@@ -81,9 +78,15 @@ public class DeathLineControll : MonoBehaviour
         if (playerPath.Count == 0)
         {
             point = player.transform.position;
+            Debug.Log("プレイヤーの位置を目標にした");
         }
         else {
             point = playerPath[playerPath.Count-1];
+            Debug.Log(playerPath[playerPath.Count-1].ToString()+"を目標にした");
+            if (Mathf.Abs(targetPos.magnitude - point.magnitude) <= 0.1f) {
+                point = player.transform.position;
+                Debug.Log("プレイヤーの位置を目標にした");
+            }
         }
         return point;
     }
