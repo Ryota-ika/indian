@@ -78,16 +78,19 @@ public class DeathLineControll : MonoBehaviour
         if (playerPath.Count == 0)
         {
             point = player.transform.position;
-            Debug.Log("プレイヤーの位置を目標にした");
         }
         else {
             point = playerPath[playerPath.Count-1];
-            Debug.Log(playerPath[playerPath.Count-1].ToString()+"を目標にした");
             if (Mathf.Abs(targetPos.magnitude - point.magnitude) <= 0.1f) {
                 point = player.transform.position;
-                Debug.Log("プレイヤーの位置を目標にした");
             }
         }
         return point;
     }
+	private void OnTriggerEnter(Collider other)
+	{
+        if (other.gameObject.tag == "player") {
+            Debug.Log("プレイヤーに衝突した");
+        }
+	}
 }
