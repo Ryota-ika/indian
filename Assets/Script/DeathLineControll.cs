@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DeathLineControll : MonoBehaviour
+//制作担当　田上
+//後ろから追いかけてくる幽霊を制御する
 {
     [Header("行動開始までの時間")]
     [SerializeField]
@@ -20,14 +22,10 @@ public class DeathLineControll : MonoBehaviour
     [SerializeField]
     int maxPlayerDataNum;
 
-
+    bool isHit=false;
     bool isStart=false;
-    [SerializeField]
     List<Vector3> playerPath = new List<Vector3>();
-    [SerializeField]
     Vector3 targetPos=new Vector3();
-    float timer;
-    int nextTargetIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,7 +70,7 @@ public class DeathLineControll : MonoBehaviour
         isStart = true;
 
     }
-    Vector3 GetNextPoint()
+    Vector3 GetNextPoint()//次の目標地点を取得
     {
         Vector3 point;
         if (playerPath.Count == 0)
@@ -91,6 +89,10 @@ public class DeathLineControll : MonoBehaviour
 	{
         if (other.gameObject.tag == "player") {
             Debug.Log("プレイヤーに衝突した");
+            isHit = true;
         }
 	}
+    public bool GetIsHit() {
+        return isHit;
+    }
 }
