@@ -20,7 +20,7 @@ public class PlayerCtrl : MonoBehaviour
     private Quaternion leftRotation;
     private float timer = 0;
     private float rotationTime = 3f;
-    private bool circleMovementInProgress = false;
+    private float curveAngle = 90f;
     // Start is called before the first frame update
     void Start()
     {
@@ -102,6 +102,9 @@ else
         if (timer <= 0)
         {
             rightRotation = Quaternion.FromToRotation(transform.forward, transform.right);
+            Debug.Log("‰Eù‰ñ");
+            Debug.Log("rightRotation" + rightRotation.ToString());
+            Debug.Log("transform.forward" + transform.forward.ToString());
         }
         if (timer <= 1f)
         {
@@ -112,6 +115,7 @@ else
             player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
             player.transform.rotation = Quaternion.Lerp(transform.rotation, rightRotation, timer);
             timer = timer / rotationTime + Time.deltaTime;
+            Debug.Log("transform.rotation"+player.transform.rotation.ToString());
         }
         else
         {
@@ -124,22 +128,23 @@ else
         //1‰ñ‚¾‚¯ˆ—‚·‚é
         if (timer <= 0)
         {
-            leftRotation = Quaternion.FromToRotation(transform.forward, -transform.right);
+            //Debug.Log("transform.rotation" + player.transform.rotation.ToString());
+            //leftRotation = Quaternion.FromToRotation(player.transform.forward, new Vector3(transform.right.x*(-1.0f), transform.right.y * (-1.0f), transform.right.z * (-1.0f)));
+            leftRotation = Quaternion.AngleAxis(-curveAngle, Vector3.up)*transform.rotation;
+            Debug.Log("-transformright"+(-transform.right).ToString());
+         
         }
         if (timer <= 1f)
         {
             //’Êí‚Ì‰~‰^“®
-            /*float rotaionAngle = speed * Time.deltaTime;*/
-            /*player.transform.RotateAround(player.transform.position, axis, rotaionAngle);*/
             timer += Time.deltaTime / rotationTime;
             player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
             player.transform.rotation = Quaternion.Lerp(transform.rotation, leftRotation, timer);
-            //timer = timer / rotationTime + Time.deltaTime;
-            Debug.Log(timer);
         }
         else
         {
             turnLeft = false;
+
         }
     }
 
