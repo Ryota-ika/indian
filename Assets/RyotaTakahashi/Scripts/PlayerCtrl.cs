@@ -19,7 +19,8 @@ public class PlayerCtrl : MonoBehaviour
     private Quaternion rightRotation;
     private Quaternion leftRotation;
     private float timer = 0;
-    private float rotationTime = 3f;
+    private float leftRotationTime = 8f;
+    private float rightRotationTime = 3f;
     private float curveAngle = 90f;
     // Start is called before the first frame update
     void Start()
@@ -114,7 +115,7 @@ else
 
             player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
             player.transform.rotation = Quaternion.Lerp(transform.rotation, rightRotation, timer);
-            timer = timer / rotationTime + Time.deltaTime;
+            timer = timer / rightRotationTime + Time.deltaTime;
             Debug.Log("transform.rotation"+player.transform.rotation.ToString());
         }
         else
@@ -134,10 +135,10 @@ else
             Debug.Log("-transformright"+(-transform.right).ToString());
          
         }
-        if (timer <= 1f)
+        if (timer <= 8f)
         {
             //’Êí‚Ì‰~‰^“®
-            timer += Time.deltaTime / rotationTime;
+            timer += Time.deltaTime / leftRotationTime;
             player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
             player.transform.rotation = Quaternion.Lerp(transform.rotation, leftRotation, timer);
         }
