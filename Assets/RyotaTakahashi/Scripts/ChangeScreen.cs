@@ -10,7 +10,8 @@ public class ChangeScreen : MonoBehaviour
     public PlayerCtrl playerCtrl;
     public GameObject Panel;
     public TextMeshProUGUI onOffText;
-    private bool onOffButton;
+    private bool onOffButton=false;
+    private bool isCoolDown=false;
 
    
     private void Awake()
@@ -24,13 +25,13 @@ public class ChangeScreen : MonoBehaviour
         onOffButton = true;
       
     }
-    
-    public void OnClick()
+
+   /* public void OnClick()
     {
         onOffButton = !onOffButton;
-        if ( onOffButton == true)
+        if (onOffButton == true)
         {
-           
+
             //onOffText.text = "Create";
             Panel.SetActive(false);
             playerCtrl.moveSpeed = 13f;
@@ -38,10 +39,42 @@ public class ChangeScreen : MonoBehaviour
         }
         else
         {
-           
+
             //onOffText.text = "Return";
             Panel.SetActive(true);
             playerCtrl.StopPlayer();
         }
+    }*/
+    public void OnClick()
+    {
+        if (!isCoolDown)
+        {
+            
+            StartCoroutine(ButtonCoolDown());
+        }
+    }
+
+    private IEnumerator ButtonCoolDown()
+    {
+        isCoolDown = true;
+        onOffButton = !onOffButton;
+
+            if (onOffButton)
+            {
+
+                //onOffText.text = "Create";
+                Panel.SetActive(false);
+                playerCtrl.moveSpeed = 13f;
+                playerCtrl.MovePlayer();
+            }
+            else
+            {
+
+                //onOffText.text = "Return";
+                Panel.SetActive(true);
+                playerCtrl.StopPlayer();
+            }
+        yield return new WaitForSeconds(2f);
+        isCoolDown=false;
     }
 }
