@@ -2891,7 +2891,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3806803017832944809, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
 --- !u!1 &1968123795
 GameObject:
@@ -3024,7 +3025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 3
-  speed: 15
+  speed: 10
   player: {fileID: 861989891}
   saveLate: 0.1
   maxPlayerDataNum: 5
