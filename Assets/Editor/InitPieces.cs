@@ -41,11 +41,17 @@ public class InitPieces : EditorWindow
 		if (GUILayout.Button("設定開始")){
 			//今出ている道をすべて取得
 			GameObject[] roads = GameObject.FindGameObjectsWithTag("Road_1A");
+			GameObject[] FieldPazzles = GameObject.FindGameObjectsWithTag("Pazzle");
+			foreach (GameObject item in FieldPazzles) {
+				Destroy(item.gameObject);
+			}
 			//マネージャー取得
 			RoadManager roadScript = GameObject.Find("RoadManeger").GetComponent<RoadManager>();
 			Pazlcell pazleScript = GameObject.Find("pazl").GetComponent<Pazlcell>();
 			//リスト格納探索用のVector2作成
 			GameObject pazleParent = Instantiate(new GameObject(), Vector3.zero, Quaternion.identity);
+			pazleParent.name = "Pazzle";
+			pazleParent.tag = "Pazzle";
 
 			//探索開始
 			for (int z=column-1;z>=0;z--){
