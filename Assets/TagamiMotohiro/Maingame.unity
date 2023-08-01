@@ -2040,7 +2040,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1395002690}
-  - component: {fileID: 1395002691}
   m_Layer: 0
   m_Name: ChangeScreen
   m_TagString: Untagged
@@ -2063,21 +2062,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1395002691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1395002689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f65eee122995b1f4db1159a7662a423a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCtrl: {fileID: 861989888}
-  Panel: {fileID: 1208046760}
-  onOffText: {fileID: 0}
 --- !u!114 &1395028885 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4633156913358351822, guid: 048d33dca78ba5a49841d6d4cd4337f5, type: 3}
@@ -2235,6 +2219,7 @@ GameObject:
   - component: {fileID: 1701694421}
   - component: {fileID: 1701694420}
   - component: {fileID: 1701694423}
+  - component: {fileID: 1701694424}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2307,7 +2292,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1395002691}
+      - m_Target: {fileID: 1701694424}
         m_TargetAssemblyTypeName: ChangeScreen, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -2376,13 +2361,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701694417}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73b92711078a67f429ea4095060a91ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Cratesprite: {fileID: 21300000, guid: 8915f25504e39774c87a5b011ce305ca, type: 3}
   Bikesprite: {fileID: 21300000, guid: 574ed0b89db157f41b1e360ef857683f, type: 3}
+--- !u!114 &1701694424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701694417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f65eee122995b1f4db1159a7662a423a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  createSprite: {fileID: 21300000, guid: 8915f25504e39774c87a5b011ce305ca, type: 3}
+  bikeSprite: {fileID: 21300000, guid: 574ed0b89db157f41b1e360ef857683f, type: 3}
+  playerCtrl: {fileID: 861989888}
+  Panel: {fileID: 1208046760}
+  onOffText: {fileID: 0}
 --- !u!4 &1719589383 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3368439012364664032, guid: 048d33dca78ba5a49841d6d4cd4337f5, type: 3}
