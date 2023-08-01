@@ -44,8 +44,12 @@ public class RoadManager : MonoBehaviour
         }
         yield return null;
     }
-    // Update is called once per frame
-    void Update()
+	public void OnDestroy()
+	{
+        Pazlcell.swapTrrigerd -= OnSwapTriigerd;
+	}
+	// Update is called once per frame
+	void Update()
     {
         
     }

@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 6606007295460993888}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,6 +238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 462570211373976930}
+  - component: {fileID: -1486730235991662704}
   m_Layer: 0
   m_Name: corner2
   m_TagString: Road_1A
@@ -263,6 +264,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1486730235991662704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462570211373976929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64b547bd388fa1498880f485a3ca511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myType: 1
 --- !u!1 &1289184095777401396
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +291,7 @@ GameObject:
   - component: {fileID: 8817749432951534110}
   m_Layer: 0
   m_Name: Wall1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -408,7 +422,7 @@ GameObject:
   - component: {fileID: 4965462450877991715}
   m_Layer: 0
   m_Name: Wall2
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
