@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ChangeScreen : MonoBehaviour
 {
+    [SerializeField]
     Image btnImage;
     public Sprite createSprite;
     public Sprite bikeSprite;
@@ -26,7 +27,6 @@ public class ChangeScreen : MonoBehaviour
     {
         //PlayerCtrl.MovePlayer();
         onOffButton = true;
-        btnImage = this.GetComponent<Image>();
     }
 
     /* public void OnClick()
