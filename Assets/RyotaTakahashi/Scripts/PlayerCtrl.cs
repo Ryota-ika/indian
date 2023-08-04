@@ -25,7 +25,6 @@ public class PlayerCtrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("player");
 
         /* Vector3 directionToCenter = center - player.transform.position;
          _targetRotatioin = Mathf.Atan2(directionToCenter.z, directionToCenter.x) * Mathf.Rad2Deg - 90;*/
