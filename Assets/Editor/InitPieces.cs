@@ -8,10 +8,6 @@ public class InitPieces : EditorWindow
 	int row;
 	int column;
 	float road_Scale;
-	GameObject straightPanel;
-	GameObject curvePanel;
-	GameObject startPanel;
-	GameObject goalPanel;
 	TextAsset MapData;
 	List<string[]> mapDataTextList=new List<string[]>();
 	[MenuItem("初期セットアップ/パズル&道情報同期")]
@@ -28,11 +24,6 @@ public class InitPieces : EditorWindow
 		road_Scale = EditorGUILayout.FloatField("道一つの大きさ", EditorPrefs.GetFloat("道一つの大きさ", road_Scale));
 		row = EditorGUILayout.IntField("ヨコ大きさ", EditorPrefs.GetInt("ヨコ大きさ", row));
 		column = EditorGUILayout.IntField("タテ大きさ", EditorPrefs.GetInt("タテ大きさ", column));
-
-		straightPanel = EditorGUILayout.ObjectField("直線パズル", straightPanel, typeof(GameObject), true) as GameObject;
-		curvePanel = EditorGUILayout.ObjectField("カーブパズル", curvePanel, typeof(GameObject), true) as GameObject;
-		startPanel = EditorGUILayout.ObjectField("スタートパズル", startPanel, typeof(GameObject), true) as GameObject;
-		goalPanel = EditorGUILayout.ObjectField("ゴールパズル", goalPanel, typeof(GameObject), true) as GameObject;
 		MapData = EditorGUILayout.ObjectField("マップのCSVデータ", MapData, typeof(TextAsset), true) as TextAsset;
 
 		if (GUILayout.Button("入力した値をセーブ"))
@@ -50,7 +41,15 @@ public class InitPieces : EditorWindow
 				string line = reader.ReadLine(); // 一行ずつ読み込み
 				mapDataTextList.Add(line.Split(",")); // , 区切りでリストに追加
 			}
+			//マネージャー取得
+			RoadManager roadScript = GameObject.Find("RoadManeger").GetComponent<RoadManager>();
+			Pazlcell pazleScript = GameObject.Find("pazl").GetComponent<Pazlcell>();
+			//リスト格納探索用のVector2作成
+			GameObject pazleParent = Instantiate(new GameObject(), Vector3.zero, Quaternion.identity);
+			pazleParent.name = "Pazzle";
+			pazleParent.tag = "Pazzle";
 			GameObject[] roads = new GameObject[row * column];
+			GameObject[] pazzle = new GameObject[row * column];
 			int n = 0;
 			for (int z = column - 1; z >= 0; z--)
 			{
@@ -60,8 +59,9 @@ public class InitPieces : EditorWindow
 					GameObject g = Instantiate(Resources.Load(prefubName) as GameObject,new Vector3(x*road_Scale,0,z*road_Scale),Quaternion.identity);
 					roads[n] = g;
 					n++;
-					//GameObject item=
-					//roads[n]=
+					if (prefubName=="Void_Pos") { continue; }
+					GameObject p = Resources.Load(prefubName+"_Pazzle") as GameObject;
+					pazzle[n] = CreatePanel(p,Quaternion.identity,pazleParent.transform,new Vector2(x,z));
 				}
 			}
 			//	//今出ている道をすべて取得
