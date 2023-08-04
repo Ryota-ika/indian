@@ -7,13 +7,16 @@ using UnityEngine.UI;
 
 public class ChangeScreen : MonoBehaviour
 {
+    Image btnImage;
+    public Sprite createSprite;
+    public Sprite bikeSprite;
     public PlayerCtrl playerCtrl;
     public GameObject Panel;
     public TextMeshProUGUI onOffText;
-    private bool onOffButton=false;
-    private bool isCoolDown=false;
+    private bool onOffButton = false;
+    private bool isCoolDown = false;
 
-   
+
     private void Awake()
     {
         //PlayerCtrl = FindObjectOfType<PlayerCtrl>();
@@ -23,33 +26,33 @@ public class ChangeScreen : MonoBehaviour
     {
         //PlayerCtrl.MovePlayer();
         onOffButton = true;
-      
+        btnImage = this.GetComponent<Image>();
     }
 
-   /* public void OnClick()
-    {
-        onOffButton = !onOffButton;
-        if (onOffButton == true)
-        {
+    /* public void OnClick()
+     {
+         onOffButton = !onOffButton;
+         if (onOffButton == true)
+         {
 
-            //onOffText.text = "Create";
-            Panel.SetActive(false);
-            playerCtrl.moveSpeed = 13f;
-            playerCtrl.MovePlayer();
-        }
-        else
-        {
+             //onOffText.text = "Create";
+             Panel.SetActive(false);
+             playerCtrl.moveSpeed = 13f;
+             playerCtrl.MovePlayer();
+         }
+         else
+         {
 
-            //onOffText.text = "Return";
-            Panel.SetActive(true);
-            playerCtrl.StopPlayer();
-        }
-    }*/
+             //onOffText.text = "Return";
+             Panel.SetActive(true);
+             playerCtrl.StopPlayer();
+         }
+     }*/
     public void OnClick()
     {
         if (!isCoolDown)
         {
-            
+
             StartCoroutine(ButtonCoolDown());
         }
     }
@@ -59,22 +62,26 @@ public class ChangeScreen : MonoBehaviour
         isCoolDown = true;
         onOffButton = !onOffButton;
 
-            if (onOffButton)
-            {
+        if (onOffButton)
+        {
 
-                //onOffText.text = "Create";
-                Panel.SetActive(false);
-                playerCtrl.moveSpeed = 13f;
-                playerCtrl.MovePlayer();
-            }
-            else
-            {
+            //onOffText.text = "Create";
+            btnImage.sprite = bikeSprite;
+            Panel.SetActive(false);
+            playerCtrl.moveSpeed = 13f;
+            playerCtrl.MovePlayer();
+        }
+        else
+        {
 
-                //onOffText.text = "Return";
-                Panel.SetActive(true);
-                playerCtrl.StopPlayer();
-            }
+            //onOffText.text = "Return";
+            btnImage.sprite = createSprite;
+            Panel.SetActive(true);
+            playerCtrl.StopPlayer();
+            isCoolDown=false;//panelがfalseになる場合、クールダウンを無くす
+            yield break;//クールダウンを続けないためにコルーチン終了
+        }
         yield return new WaitForSeconds(2f);
-        isCoolDown=false;
+        isCoolDown = false;
     }
 }
