@@ -151,4 +151,10 @@ public class Pazlcell : MonoBehaviour
 	{
 		pieces_List.Add(Piece);
 	}
+	public void SetVoidPos(Vector2Int value) {
+		voidPos = value;
+	}
+	public void SetMapSize(Vector2Int value) {
+		maxMapSize = value;
+	}
 }

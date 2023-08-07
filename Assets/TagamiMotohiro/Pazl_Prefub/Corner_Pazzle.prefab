@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4727311161954974077}
   - component: {fileID: -4998547174168577797}
   m_Layer: 3
-  m_Name: CurveRoad
+  m_Name: Corner_Pazzle
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
