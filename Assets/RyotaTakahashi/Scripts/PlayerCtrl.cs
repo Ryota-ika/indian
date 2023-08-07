@@ -20,7 +20,7 @@ public class PlayerCtrl : MonoBehaviour
     private Quaternion leftRotation;
     private float timer = 0;
     private float leftRotationTime = 8f;
-    private float rightRotationTime = 3f;
+    private float rightRotationTime = 16f;
     private float curveAngle = 90f;
     // Start is called before the first frame update
     void Start()
@@ -96,7 +96,7 @@ else
 
     }
 
-    private void MoveTurnRight()
+    /*private void MoveTurnRight()
     {
         //1‰ñ‚¾‚¯ˆ—‚·‚é
         if (timer <= 0)
@@ -109,8 +109,8 @@ else
         if (timer <= 1f)
         {
             //’Êí‚Ì‰~‰^“®
-            /*float rotaionAngle = speed * Time.deltaTime;*/
-            /*player.transform.RotateAround(player.transform.position, axis, rotaionAngle);*/
+            *//*float rotaionAngle = speed * Time.deltaTime;*/
+            /*player.transform.RotateAround(player.transform.position, axis, rotaionAngle);*//*
 
             player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
             player.transform.rotation = Quaternion.Lerp(transform.rotation, rightRotation, timer);
@@ -120,6 +120,31 @@ else
         else
         {
             turnRight = false;
+        }
+    }*/
+
+    private void MoveTurnRight()
+    {
+        //1‰ñ‚¾‚¯ˆ—‚·‚é
+        if (timer <= 0)
+        {
+            //Debug.Log("transform.rotation" + player.transform.rotation.ToString());
+            //leftRotation = Quaternion.FromToRotation(player.transform.forward, new Vector3(transform.right.x*(-1.0f), transform.right.y * (-1.0f), transform.right.z * (-1.0f)));
+            rightRotation = Quaternion.AngleAxis(curveAngle, Vector3.up) * transform.rotation;
+            Debug.Log("-transformright" + (-transform.right).ToString());
+
+        }
+        if (timer <= 8f)
+        {
+            //’Êí‚Ì‰~‰^“®
+            timer += Time.deltaTime / rightRotationTime;
+            player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+            player.transform.rotation = Quaternion.Lerp(transform.rotation, rightRotation, timer);
+        }
+        else
+        {
+            turnRight = false;
+
         }
     }
 
