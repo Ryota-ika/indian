@@ -1,4 +1,7 @@
-Corner,straight,straight,Corner
-straight,Corner,straight,straight
-Corner,Void_Pos,straight,straight
-straight,straight,straight,Corner
+straight_Yoko,straight_Yoko,Corner_Right_Up,straight_Yoko,,
+straight_Yoko,Corner_Right_Up,straight_Yoko,straight_Yoko,,
+Void_Pos,straight_Yoko,straight_Yoko,Corner_Right_Up,,
+straight_Yoko,Corner_Right_Up,Corner_Right_Up,Corner_Right_Up,,
+,,,,,
+,,,,,
+,,,,,

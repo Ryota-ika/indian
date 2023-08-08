@@ -73,7 +73,7 @@ public class InitPieces : EditorWindow
 					if (prefubName=="Void_Pos") {pazleScript.AddToPieceList(null); n++; continue; }
 					GameObject p = Resources.Load(prefubName+"_Pazzle") as GameObject;
 					pazzle[n] = CreatePanel(p,Quaternion.identity,pazleParent.transform,new Vector2(x,z));
-					pazleScript.SetVoidPos(new Vector2Int(x,z));
+					pazleScript.SetVoidPos(new Vector2Int(x-1,z+1));
 					pazleScript.AddToPieceList(pazzle[n].GetComponent<SensingPazl>());
 					n++;
 				}

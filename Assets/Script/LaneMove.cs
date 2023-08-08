@@ -50,6 +50,7 @@ public class LaneMove : MonoBehaviour//§ì’S“–@“cã@ƒvƒŒƒCƒ„[‚ª¶‰E‚ÌÔü‚ğˆ
         while (t<=1)
         {
             transform.position = Vector3.Lerp(pos,targetPos,1-Mathf.Pow(1-t,5));
+            Debug.Log(Vector3.Lerp(pos, targetPos, 1 - Mathf.Pow(1 - t, 5)));
             t += Time.deltaTime/moveTime;
             yield return null;
         }
