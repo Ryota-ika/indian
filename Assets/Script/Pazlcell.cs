@@ -16,26 +16,7 @@ public class Pazlcell : MonoBehaviour
 	[Header("スラパの空き箇所")]
 	[SerializeField]
 	Vector2Int voidPos;
-    bool touchFlag = false;//マウスが押されているとき
-    bool isMovePice=false;//Piceの移動用（移動しているときはtrue）
 	public static event UnityAction<Vector2Int,Vector2Int> swapTrrigerd;
-	//RectTransform r, r2;
-	//Vector2 m;
-	//Vector3 SecondPos;
-	//Vector3 currenSwipePos;
-	//float datectionButton = -0.8f;
-	//float datetctionup = 0.8f;
-
-
-	Vector3 PicePos_Target, PicePos_Target2;//移動予定位置
-    Vector3 first_Pos;//タップ時のポインターの位置
-    Vector3 Piec_Now;//移動前の現在位置
-    Vector3 Piec_Now2;//移動前の現在位置
-    private int posNum_Now;
-    private int posNum_Now2;
-    private int pos_Traget;
-    private int pos_Traget2;
-    private int dif_PosNum, dif_PosNum2;
 	[SerializeField]
 	SensingPazl PiecePrefub;
 	// SensingPazl ClasesensingPazl;//呼び出し用
@@ -156,5 +137,9 @@ public class Pazlcell : MonoBehaviour
 	}
 	public void SetMapSize(Vector2Int value) {
 		maxMapSize = value;
+	}
+	public void ListReset()
+	{
+		pieces_List = new List<SensingPazl>();
 	}
 }
