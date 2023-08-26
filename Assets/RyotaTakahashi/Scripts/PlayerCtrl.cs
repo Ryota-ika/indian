@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    [SerializeField]
+    RoadManager roadManager;
     [SerializeField] private GameObject player;
     //現在の道のオブジェクト
     public float moveSpeed = 13f;
@@ -22,6 +24,8 @@ public class PlayerCtrl : MonoBehaviour
     private float leftRotationTime = 8f;
     private float rightRotationTime = 16f;
     private float curveAngle = 90f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +49,8 @@ public class PlayerCtrl : MonoBehaviour
             MovePlayer();
         }
     }
+
+
 
     /*if (turnRight)
             {
@@ -206,5 +212,10 @@ else
         {
             turnLeft = true;
         }
+
+
     }
+   
 }
+
+
