@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1759522507127682463}
   - component: {fileID: 1759522507127682456}
+  - component: {fileID: 6121352475077415740}
   m_Layer: 0
   m_Name: pazl
   m_TagString: Untagged
@@ -49,3 +50,15 @@ MonoBehaviour:
   voidPos: {x: 0, y: 0}
   PiecePrefub: {fileID: 1887226155725739481, guid: 43a42ffca32e50640939064b110d7dab, type: 3}
   pieces_List: []
+--- !u!114 &6121352475077415740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759522507127682457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e59aa96fc8f2349aea4d95eabcd6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -16,22 +16,26 @@ public class RoadManager : MonoBehaviour
     Pazlcell pazzleManeger;
     [Header("道1ピースの大きさ")]
     [SerializeField]
-    float road_Scale;
+   float road_Scale;
+    //8月追加
     // Start is called before the first frame update
     void Start()
     {
         Pazlcell.swapTrrigerd += OnSwapTriigerd;
         StartCoroutine(RoadSetUp());
     }
+
     void OnSwapTriigerd(Vector2Int from,Vector2Int target)
     {
-        GameObject from_Copy = roads[from.x, from.y];//代入用の一時コピー作成
+           GameObject from_Copy = roads[from.x, from.y];//代入用の一時コピー作成
         roads[from.x, from.y] = roads[target.x, target.y];//配列内の要素を入れ替える
         roads[target.x, target.y] = from_Copy;
         //移動した位置を反映
         roads[from.x, from.y].transform.position = new Vector3(from.x * road_Scale, 0, from.y * road_Scale);
         roads[target.x, target.y].transform.position = new Vector3(target.x * road_Scale, 0, target.y * road_Scale);
+       
     }
+
     IEnumerator RoadSetUp()//2次元配列への格納をする
     {
         roads = new GameObject[maxMapSize.x, maxMapSize.y];
@@ -39,25 +43,34 @@ public class RoadManager : MonoBehaviour
         for (int y=maxMapSize.y-1;y>=0;y--) {
             for (int x=0;x<maxMapSize.x;x++) {
                 roads[x, y] = road_List[n];
+                roads[x, y] = road_List[n];
                 n++;
             }
         }
         yield return null;
     }
-	public void OnDestroy()//消滅(シーン移動)と同時にトリガー購読解除
+   
+
+    public void OnDestroy()//消滅(シーン移動)と同時にトリガー購読解除
 	{
         Pazlcell.swapTrrigerd -= OnSwapTriigerd;
 	}
 	// Update is called once per frame
 	void Update()
     {
-        
+
     }
     public void AddToRoadList(GameObject item)
     {
         road_List.Add(item);
     }
+<<<<<<< HEAD
     public void ListReset() {
         road_List = new List<GameObject>();
     }
+=======
+    //8月追加
+    
+
+>>>>>>> origin/main
 }

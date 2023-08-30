@@ -14,4 +14,8 @@ public class SceneLoder : MonoBehaviour
 	public void LoadResult() {
 		SceneManager.LoadScene("Result");
 	}
+    public void LoadClear()
+    {
+        SceneManager.LoadScene("GameClear");
+    }
 }
