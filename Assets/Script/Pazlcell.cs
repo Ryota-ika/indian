@@ -169,6 +169,10 @@ public class Pazlcell : MonoBehaviour
 		maxMapSize = value;
 	}
     //8ŒŽ’Ç‰Á
+	public void ListReset()
+	{
+		pieces_List = new List<SensingPazl>();
+	}
 
-  
+
 }
