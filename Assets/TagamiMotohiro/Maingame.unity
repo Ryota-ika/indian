@@ -1267,7 +1267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ea03c7e516c464abe6eb44a7482421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roadManager: {fileID: 454004166}
+  player: {fileID: 0}
+  maxPlayerDataNum: 0
 --- !u!4 &861989891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5288783187181008271, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
