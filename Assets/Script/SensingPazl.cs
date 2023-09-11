@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Security.Principal;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+
 
 public class SensingPazl : MonoBehaviour
 {
@@ -19,34 +21,55 @@ public class SensingPazl : MonoBehaviour
     Vector2Int posIndex;//自分の位置番号(xとyでばらばらになっていたためvec2intで統一しました)
     public int MovePossible =10; //空いている番号
 
-    private Action<int,int>swapFunc = null;
+    public Action<int,int>swapFunc = null; 
+    //8月追加
+
+
     public void Init(int x ,int y,int index,Action<int ,int> swapFunc)
     {
         this.index = index;
-        posIndex = new Vector2Int(x,y);
-        this.swapFunc = swapFunc;
+        posIndex = new Vector2Int(x, y);
+        this.swapFunc = swapFunc;   
+ 
     }
 
     public void UpdatePos(int i ,int j,float moveScale)//数値を代入から加算へ+intの固定値での移動ではサイズ変更に対応できないため対応できる形に変更
     {
+       
         posIndex.x += i;
         posIndex.y += j;
         this.gameObject.transform.localPosition += new Vector3((float)i*moveScale,(float)j*moveScale,transform.localPosition.z);
     }
 
+
     public bool IsEmpty()
     {
         return index == Maxindex;
     }
+    //8月追加分
+  
+    //
+
+
+
 
     public void OnMouseDown()
     {
-        if(Input.GetMouseButtonDown(0) && swapFunc != null)
+        if (Input.GetMouseButtonDown(0) && swapFunc != null)
         {
-            swapFunc(posIndex.x,posIndex.y);
-            Debug.Log("入ってる");
-        }   
+                // プレイヤーが道ピースの上にいない場合、通常のクリック処理を行う
+                swapFunc(posIndex.x, posIndex.y);
+                Debug.Log("クリック処理を実行");
+        }
+        else
+        {
+            Debug.Log("プレイヤーが乗っています");
+        }
     }
+
+    
+  
+
     //Start is called before the first frame update
     void Start()
     {
@@ -56,7 +79,7 @@ public class SensingPazl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   void Update()
     {
 
     }

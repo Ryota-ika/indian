@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject gameOverText;
     bool isGameOver=false;
+  
+   bool  gameCleart = false;
+    [SerializeField]
+    Criascript clear;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +27,11 @@ public class GameManager : MonoBehaviour
         if (deth.GetIsHit()&&!isGameOver) {
             StartCoroutine(GameOver());
         }
+
+        if (clear.GetIsHit() && !gameCleart)
+        {
+            StartCoroutine(GameClear());
+        }
     }
 
     IEnumerator GameOver() {
@@ -32,4 +41,12 @@ public class GameManager : MonoBehaviour
         mySL.LoadResult();
        
     }
+
+   IEnumerator GameClear()
+    {
+        gameCleart = true;
+        yield return new WaitForSeconds(1);
+        mySL.LoadClear();
+    }
+
 }
