@@ -65,6 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 178680e864e739f47a94c2d6e0d983d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roadManager: {fileID: 0}
   player: {fileID: 5288783186838962776}
   moveSpeed: 13
   targetRotation: {x: 0, y: 0, z: 0, w: 0}
