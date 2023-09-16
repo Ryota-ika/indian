@@ -95,4 +95,8 @@ public class DeathLineControll : MonoBehaviour
     public bool GetIsHit() {
         return isHit;
     }
+    public bool GetIsStart()
+	{
+        return isStart;
+	}
 }

@@ -64,7 +64,8 @@ public class RoadManager : MonoBehaviour
     {
         road_List.Add(item);
     }
-    //8ŒŽ’Ç‰Á
-    
-
+    public void ListReset()
+    {
+        road_List = new List<GameObject>();
+    }
 }

@@ -54,6 +54,8 @@ public class InitPieces : EditorWindow
 			//マネージャー取得
 			RoadManager roadScript = GameObject.Find("RoadManeger").GetComponent<RoadManager>();
 			Pazlcell pazleScript = GameObject.Find("pazl").GetComponent<Pazlcell>();
+			roadScript.ListReset();
+			pazleScript.ListReset();
 			//リスト格納探索用のVector2作成
 			GameObject pazleParent = Instantiate(new GameObject(), Vector3.zero, Quaternion.identity);
 			pazleParent.name = "Pazzle";
