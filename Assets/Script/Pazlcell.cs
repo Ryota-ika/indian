@@ -19,14 +19,6 @@ public class Pazlcell : MonoBehaviour
 	//bool touchFlag = false;//マウスが押されているとき
 	//bool isMovePice = false;//Piceの移動用（移動しているときはtrue）
 	public static event UnityAction<Vector2Int, Vector2Int> swapTrrigerd;
-	//RectTransform r, r2;
-	//Vector2 m;
-	//Vector3 SecondPos;
-	//Vector3 currenSwipePos;
-	//float datectionButton = -0.8f;
-	//float datetctionup = 0.8f;
-
-
 	Vector3 PicePos_Target, PicePos_Target2;//移動予定位置
 	Vector3 first_Pos;//タップ時のポインターの位置
 	Vector3 Piec_Now;//移動前の現在位置
@@ -100,19 +92,16 @@ public class Pazlcell : MonoBehaviour
 
     void ClickSwap(int x, int y)//pieceと何もない空間を入れ替えて配列情報を更新
 	{
-		
-		
-            var PieceX = GetPieceX(x, y);
-            var PieceY = GetPieceY(x, y);
-            var from = pieces[x, y];
+		var PieceX = GetPieceX(x, y);
+		var PieceY = GetPieceY(x, y);
+		var from = pieces[x, y];
 		var target = pieces[x + PieceX, y + PieceY];
-			pieces[x, y] = null;
-            pieces[x + PieceX, y + PieceY] = from;
-            from.UpdatePos(PieceX, PieceY, movePow);
+		pieces[x, y] = null;
+		pieces[x + PieceX, y + PieceY] = from;
+		from.UpdatePos(PieceX, PieceY, movePow);
 		
-            // 入れ替わった位置を引数としてトリガーを発行
-            swapTrrigerd.Invoke(new Vector2Int(x, y), new Vector2Int(x + PieceX, y + PieceY));
-        
+		// 入れ替わった位置を引数としてトリガーを発行
+		swapTrrigerd.Invoke(new Vector2Int(x, y), new Vector2Int(x + PieceX, y + PieceY));
     }
 
 
