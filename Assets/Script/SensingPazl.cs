@@ -18,19 +18,19 @@ public class SensingPazl : MonoBehaviour
     public int index = 0;
     public int Maxindex =0;
     [SerializeField]
-    Vector2Int posIndex;//自分の位置番号(xとyでばらばらになっていたためvec2intで統一しました)
+    public Vector2Int posIndex;//自分の位置番号(xとyでばらばらになっていたためvec2intで統一しました)
     public int MovePossible =10; //空いている番号
 
-    public Action<int,int>swapFunc = null; 
+    public Action<int,int>swapFunc = null;
     //8月追加
+	public bool canBeClicked { get; internal set; }
 
-
-    public void Init(int x ,int y,int index,Action<int ,int> swapFunc)
+	public void Init(int x ,int y,int index,Action<int ,int> swapFunc)
     {
+    
         this.index = index;
         posIndex = new Vector2Int(x, y);
-        this.swapFunc = swapFunc;   
- 
+        this.swapFunc = swapFunc;
     }
 
     public void UpdatePos(int i ,int j,float moveScale)//数値を代入から加算へ+intの固定値での移動ではサイズ変更に対応できないため対応できる形に変更
@@ -47,7 +47,7 @@ public class SensingPazl : MonoBehaviour
         return index == Maxindex;
     }
     //8月追加分
-  
+   
     //
 
 
@@ -55,34 +55,29 @@ public class SensingPazl : MonoBehaviour
 
     public void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0) && swapFunc != null)
+        if (Input.GetMouseButtonDown(0) && swapFunc != null && canBeClicked)
         {
-                // プレイヤーが道ピースの上にいない場合、通常のクリック処理を行う
+           
                 swapFunc(posIndex.x, posIndex.y);
                 Debug.Log("クリック処理を実行");
-        }
-        else
-        {
-            Debug.Log("プレイヤーが乗っています");
+            
         }
     }
-
-    
-  
-
+ 
     //Start is called before the first frame update
     void Start()
     {
-     
 
-
-    }
-
-    // Update is called once per frame
-   void Update()
-    {
+        
 
     }
+
+        // Update is called once per frame
+        void Update( )
+        {
+           
+
+        }
 
 
  //   public int MovePossble()
@@ -168,5 +163,4 @@ public class SensingPazl : MonoBehaviour
     //	}
 
 }
-
 
