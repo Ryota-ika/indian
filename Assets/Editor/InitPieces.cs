@@ -81,7 +81,7 @@ public class InitPieces : EditorWindow
 						continue; }
 					GameObject p = Resources.Load(prefubName+"_Pazzle") as GameObject;
 					Debug.Log(p.transform.rotation);
-					pazzle[n] = CreatePanel(p,p.transform.rotation,pazleParent.transform,new Vector2(z,z));
+					pazzle[n] = CreatePanel(p,p.transform.rotation,pazleParent.transform,new Vector2(x,z));
 					pazleScript.SetVoidPos(new Vector2Int(x-1,z+1));
 					pazleScript.AddToPieceList(pazzle[n].GetComponent<SensingPazl>());
 					n++;
