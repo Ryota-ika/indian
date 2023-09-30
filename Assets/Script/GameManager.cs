@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator GameOver() {
+    public IEnumerator GameOver() {
         isGameOver = true;
         gameOverText.SetActive(true);
         yield return new WaitForSeconds(3);
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
        
     }
 
-   IEnumerator GameClear()
+    public IEnumerator GameClear()
     {
         gameCleart = true;
         yield return new WaitForSeconds(1);
