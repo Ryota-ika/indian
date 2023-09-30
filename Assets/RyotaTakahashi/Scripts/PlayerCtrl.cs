@@ -129,7 +129,7 @@ else
         }
     }*/
 
-    private void MoveTurnRight()
+   public void MoveTurnRight()
     {
         //1‰ñ‚¾‚¯ˆ—‚·‚é
         if (timer <= 0)

@@ -55,7 +55,7 @@ public class InitPieces : EditorWindow
 			RoadManager roadScript = GameObject.Find("RoadManeger").GetComponent<RoadManager>();
 			Pazlcell pazleScript = GameObject.Find("pazl").GetComponent<Pazlcell>();
 			roadScript.ListReset();
-			pazleScript.ListReset();
+			//pazleScript.ListReset();
 			//ƒŠƒXƒgŠi”[’Tõ—p‚ÌVector2ì¬
 			GameObject pazleParent = Instantiate(new GameObject(), Vector3.zero, Quaternion.identity);
 			pazleParent.name = "Pazzle";
