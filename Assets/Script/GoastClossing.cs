@@ -79,7 +79,6 @@ public class GoastClossing : MonoBehaviour
                 break;
         }
         float image_Alpha = 1-(distance/goastApproach);
-        Debug.Log(image_Alpha);
         Color right_Color = rightHand.color;
         right_Color.a = image_Alpha;
         rightHand.color = right_Color;

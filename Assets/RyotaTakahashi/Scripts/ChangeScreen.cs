@@ -29,25 +29,6 @@ public class ChangeScreen : MonoBehaviour
         onOffButton = true;
     }
 
-    /* public void OnClick()
-     {
-         onOffButton = !onOffButton;
-         if (onOffButton == true)
-         {
-
-             //onOffText.text = "Create";
-             Panel.SetActive(false);
-             playerCtrl.moveSpeed = 13f;
-             playerCtrl.MovePlayer();
-         }
-         else
-         {
-
-             //onOffText.text = "Return";
-             Panel.SetActive(true);
-             playerCtrl.StopPlayer();
-         }
-     }*/
     public void OnClick()
     {
         if (!isCoolDown)
