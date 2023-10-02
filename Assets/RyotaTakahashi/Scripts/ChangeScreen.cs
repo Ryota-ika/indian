@@ -13,7 +13,8 @@ public class ChangeScreen : MonoBehaviour
     public Sprite bikeSprite;
     public PlayerCtrl playerCtrl;
     public GameObject Panel;
-    public TextMeshProUGUI onOffText;
+    public Transform panelMinPos;
+    public Transform panelMaxPos;
     private bool onOffButton = false;
     private bool isCoolDown = false;
 
@@ -28,26 +29,6 @@ public class ChangeScreen : MonoBehaviour
         //PlayerCtrl.MovePlayer();
         onOffButton = true;
     }
-
-    /* public void OnClick()
-     {
-         onOffButton = !onOffButton;
-         if (onOffButton == true)
-         {
-
-             //onOffText.text = "Create";
-             Panel.SetActive(false);
-             playerCtrl.moveSpeed = 13f;
-             playerCtrl.MovePlayer();
-         }
-         else
-         {
-
-             //onOffText.text = "Return";
-             Panel.SetActive(true);
-             playerCtrl.StopPlayer();
-         }
-     }*/
     public void OnClick()
     {
         if (!isCoolDown)
@@ -65,18 +46,16 @@ public class ChangeScreen : MonoBehaviour
         if (onOffButton)
         {
 
-            //onOffText.text = "Create";
             btnImage.sprite = bikeSprite;
-            Panel.SetActive(false);
+            StartCoroutine(TransitionCreate(true));
             playerCtrl.moveSpeed = 13f;
             playerCtrl.MovePlayer();
         }
         else
         {
 
-            //onOffText.text = "Return";
             btnImage.sprite = createSprite;
-            Panel.SetActive(true);
+            StartCoroutine(TransitionCreate(false));
             playerCtrl.StopPlayer();
             isCoolDown=false;//panelがfalseになる場合、クールダウンを無くす
             yield break;//クールダウンを続けないためにコルーチン終了
@@ -84,4 +63,31 @@ public class ChangeScreen : MonoBehaviour
         yield return new WaitForSeconds(2f);
         isCoolDown = false;
     }
+    IEnumerator TransitionCreate(bool panelActive)
+	{
+        float timer = 0;
+        if (panelActive)
+		{
+            while (timer <= 1)
+            {
+                Vector3 panelPos = Vector3.Lerp(panelMinPos.position, panelMaxPos.position, timer);
+                float panelScale = Mathf.Lerp(panelMinPos.localScale.x, panelMaxPos.localScale.x, timer);
+                Panel.transform.position = panelPos;
+                Panel.transform.localScale = new Vector3(panelScale,panelScale,panelScale);
+                timer += Time.deltaTime;
+                yield return null;
+            }
+            yield break;
+		}else
+		{
+            while (timer <= 1)
+            {
+                Vector3 panelPos = Vector3.Lerp(panelMaxPos.position, panelMinPos.position, timer);
+                Panel.transform.position = panelPos;
+                timer += Time.deltaTime;
+                yield return null;
+            }
+            yield break;
+        }
+	}
 }
