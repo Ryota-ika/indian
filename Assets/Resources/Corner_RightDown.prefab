@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 462570211373976930}
   - component: {fileID: -1486730235991662704}
   m_Layer: 0
-  m_Name: Corner_Right_Up
+  m_Name: Corner_RightDown
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

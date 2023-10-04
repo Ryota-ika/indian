@@ -55,7 +55,7 @@ public class InitPieces : EditorWindow
 			RoadManager roadScript = GameObject.Find("RoadManeger").GetComponent<RoadManager>();
 			Pazlcell pazleScript = GameObject.Find("pazl").GetComponent<Pazlcell>();
 			roadScript.ListReset();
-			pazleScript.ListReset();
+			//pazleScript.ListReset();
 			//ƒŠƒXƒgŠi”[’Tõ—p‚ÌVector2ì¬
 			GameObject pazleParent = Instantiate(new GameObject(), Vector3.zero, Quaternion.identity);
 			pazleParent.name = "Pazzle";
@@ -64,17 +64,24 @@ public class InitPieces : EditorWindow
 			GameObject[] pazzle = new GameObject[row * column];
 			int n = 0;
 			pazleScript.SetMapSize(new Vector2Int(row, column));
-			for (int z = column - 1; z >= 0; z--)
+			for (int z = column-1; z >= 0; z--)
 			{
 				for (int x = 0; x < row; x++)
 				{
 					string prefubName = mapDataTextList[x][z];
-					GameObject g = Instantiate(Resources.Load(prefubName) as GameObject,new Vector3(x*road_Scale,0,z*road_Scale),Quaternion.identity);
+					GameObject road = Resources.Load(prefubName) as GameObject;
+					GameObject g = Instantiate(road,new Vector3(x*road_Scale,0,z*road_Scale),road.transform.rotation);
+					Debug.Log(new Vector2Int(x,z));
+					Debug.Log(mapDataTextList[x][z]);
 					roads[n] = g;
 					roadScript.AddToRoadList(roads[n]);
-					if (prefubName=="Void_Pos") {pazleScript.AddToPieceList(null); n++; continue; }
+					if (prefubName=="Void_Pos") {
+						pazleScript.AddToPieceList(null); 
+						n++;
+						continue; }
 					GameObject p = Resources.Load(prefubName+"_Pazzle") as GameObject;
-					pazzle[n] = CreatePanel(p,Quaternion.identity,pazleParent.transform,new Vector2(x,z));
+					Debug.Log(p.transform.rotation);
+					pazzle[n] = CreatePanel(p,p.transform.rotation,pazleParent.transform,new Vector2(x,z));
 					pazleScript.SetVoidPos(new Vector2Int(x-1,z+1));
 					pazleScript.AddToPieceList(pazzle[n].GetComponent<SensingPazl>());
 					n++;
