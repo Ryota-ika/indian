@@ -9,6 +9,8 @@ public class ChangeScreen : MonoBehaviour
 {
     [SerializeField]
     Image btnImage;
+    [SerializeField]
+    Button button;
     public Sprite createSprite;
     public Sprite bikeSprite;
     public PlayerCtrl playerCtrl;
@@ -41,11 +43,6 @@ public class ChangeScreen : MonoBehaviour
 
     private IEnumerator ButtonCoolDown()
     {
-        if (isCoolDown)
-		{
-            yield break;
-		}
-        isCoolDown = true;
         onOffButton = !onOffButton;
         if (onOffButton)
         {
@@ -64,8 +61,9 @@ public class ChangeScreen : MonoBehaviour
 			isCoolDown = false;//panelがfalseになる場合、クールダウンを無くす
 			yield break;//クールダウンを続けないためにコルーチン終了
 		}
+        button.interactable = false;
         yield return new WaitForSeconds(2f);
-        isCoolDown = false;
+        button.interactable = true;
     }
     IEnumerator TransitionCreate(bool panelActive)
 	{

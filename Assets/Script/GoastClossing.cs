@@ -45,23 +45,9 @@ public class GoastClossing : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(player.position,goast.transform.position);
-		//if (distance < goastApproach&&goast.GetIsStart())
-		//{
-		//    Debug.Log("—H—ì‚ª‹ß‚Ã‚¢‚Ä‚«‚½@Žc‚è–ñ" + distance.ToString() + "m");
-		//    float size = distance / goastApproach;
-		//    //‹ß‚Ã‚«‹ï‡‚ÌŠ„‡‚ðo‚µ‚Ä‰æ‘œ‚Ì•\Ž¦—Ìˆæ‚ð’²®
-
-		//    bloodImage.rectTransform.localScale = new Vector3(
-		//        Mathf.Lerp(minImageSize.x, maxImageSize.x, size),
-		//        Mathf.Lerp(minImageSize.y, maxImageSize.y, size),
-		//        1);
-		//}
-		//else {
-		//    bloodImage.rectTransform.localScale = maxImageSize;
-		//}
 		switch (GetDistanceState(distance))
 		{
-            //‹ß‚Ã‚«‹ï‡‚É‰ž‚¶‚Ä
+            //‹ß‚Ã‚«‹ï‡‚É‰ž‚¶‚Ä—H—ì‚ÌŽè‚Ìó‘Ô‚ð•Ï‰»
             case DISTANCE_STATE.DISTANTE:
                 leftHand.gameObject.transform.position = leftHandPositions[0].position;
                 rightHand.gameObject.transform.position = rightHandPositions[0].position;
