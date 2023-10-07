@@ -17,6 +17,7 @@ public class ChangeScreen : MonoBehaviour
     public Transform panelMaxPos;
     private bool onOffButton = false;
     private bool isCoolDown = false;
+    private float cullentMoveSpeed;
 
 
     private void Awake()
@@ -40,26 +41,29 @@ public class ChangeScreen : MonoBehaviour
 
     private IEnumerator ButtonCoolDown()
     {
+        if (isCoolDown)
+		{
+            yield break;
+		}
         isCoolDown = true;
         onOffButton = !onOffButton;
-
         if (onOffButton)
         {
-
             btnImage.sprite = bikeSprite;
-            StartCoroutine(TransitionCreate(true));
+            Panel.SetActive(false);
+            //StartCoroutine(TransitionCreate(true));
             playerCtrl.moveSpeed = 13f;
             playerCtrl.MovePlayer();
         }
         else
         {
-
             btnImage.sprite = createSprite;
-            StartCoroutine(TransitionCreate(false));
+            Panel.SetActive(true);
+            //StartCoroutine(TransitionCreate(false));
             playerCtrl.StopPlayer();
-            isCoolDown=false;//panelがfalseになる場合、クールダウンを無くす
-            yield break;//クールダウンを続けないためにコルーチン終了
-        }
+			isCoolDown = false;//panelがfalseになる場合、クールダウンを無くす
+			yield break;//クールダウンを続けないためにコルーチン終了
+		}
         yield return new WaitForSeconds(2f);
         isCoolDown = false;
     }
@@ -68,16 +72,16 @@ public class ChangeScreen : MonoBehaviour
         float timer = 0;
         if (panelActive)
 		{
-            while (timer <= 1)
-            {
-                Vector3 panelPos = Vector3.Lerp(panelMinPos.position, panelMaxPos.position, timer);
-                float panelScale = Mathf.Lerp(panelMinPos.localScale.x, panelMaxPos.localScale.x, timer);
-                Panel.transform.position = panelPos;
-                Panel.transform.localScale = new Vector3(panelScale,panelScale,panelScale);
-                timer += Time.deltaTime;
-                yield return null;
-            }
-            yield break;
+			while (timer <= 1)
+			{
+				Vector3 panelPos = Vector3.Lerp(panelMinPos.position, panelMaxPos.position, timer);
+				float panelScale = Mathf.Lerp(panelMinPos.localScale.x, panelMaxPos.localScale.x, timer);
+				Panel.transform.position = panelPos;
+				Panel.transform.localScale = new Vector3(panelScale, panelScale, panelScale);
+				timer += Time.deltaTime;
+				yield return null;
+			}
+			yield break;
 		}else
 		{
             while (timer <= 1)

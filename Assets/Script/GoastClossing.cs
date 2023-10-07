@@ -7,10 +7,10 @@ public class GoastClossing : MonoBehaviour
 {
     enum DISTANCE_STATE
     {
-        DISTANTE,
-        CLOSED,
-        VELY_CLOSED,
-        CLOSEST
+        DISTANTE = 0,
+        CLOSED = 1,
+        VELY_CLOSED = 2,
+        CLOSEST = 3
     }
 	[Header("ÉvÉåÉCÉÑÅ[")]
     [SerializeField]
@@ -61,6 +61,7 @@ public class GoastClossing : MonoBehaviour
 		//}
 		switch (GetDistanceState(distance))
 		{
+            //ãﬂÇ√Ç´ãÔçáÇ…âûÇ∂Çƒ
             case DISTANCE_STATE.DISTANTE:
                 leftHand.gameObject.transform.position = leftHandPositions[0].position;
                 rightHand.gameObject.transform.position = rightHandPositions[0].position;
