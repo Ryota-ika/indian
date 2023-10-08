@@ -7,10 +7,10 @@ public class GoastClossing : MonoBehaviour
 {
     enum DISTANCE_STATE
     {
-        DISTANTE,
-        CLOSED,
-        VELY_CLOSED,
-        CLOSEST
+        DISTANTE = 0,
+        CLOSED = 1,
+        VELY_CLOSED = 2,
+        CLOSEST = 3
     }
 	[Header("プレイヤー")]
     [SerializeField]
@@ -45,22 +45,9 @@ public class GoastClossing : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(player.position,goast.transform.position);
-		//if (distance < goastApproach&&goast.GetIsStart())
-		//{
-		//    Debug.Log("幽霊が近づいてきた　残り約" + distance.ToString() + "m");
-		//    float size = distance / goastApproach;
-		//    //近づき具合の割合を出して画像の表示領域を調整
-
-		//    bloodImage.rectTransform.localScale = new Vector3(
-		//        Mathf.Lerp(minImageSize.x, maxImageSize.x, size),
-		//        Mathf.Lerp(minImageSize.y, maxImageSize.y, size),
-		//        1);
-		//}
-		//else {
-		//    bloodImage.rectTransform.localScale = maxImageSize;
-		//}
 		switch (GetDistanceState(distance))
 		{
+            //近づき具合に応じて幽霊の手の状態を変化
             case DISTANCE_STATE.DISTANTE:
                 leftHand.gameObject.transform.position = leftHandPositions[0].position;
                 rightHand.gameObject.transform.position = rightHandPositions[0].position;
