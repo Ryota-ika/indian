@@ -194,7 +194,7 @@ public class Pazlcell : MonoBehaviour
                     // 最も近いピースを探す
                     if (distance < nearestDistance)
                     {
-						Debug.Log("最も近いピースは" +x.ToString()+y.ToString());
+						//Debug.Log("最も近いピースは" +x.ToString()+y.ToString());
                         nearestPiece = piece;
                         nearestDistance = distance;
                         playerIconIndex = new Vector2Int(x, y); // プレイヤーアイコンの位置のインデックスを更新

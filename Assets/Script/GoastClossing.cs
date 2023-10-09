@@ -85,10 +85,14 @@ public class GoastClossing : MonoBehaviour
 				blood.gameObject.SetActive(true);
 				break;
         }
-        if (state != DISTANCE_STATE.DISTANTE&&!voicePlaing)
+        if (state != DISTANCE_STATE.DISTANTE)
         {
-            playVoice();
-            voicePlaing = true;
+            Debug.Log("");
+            if (!voicePlaing)
+            {
+                playVoice();
+                voicePlaing = true;
+            }
         }else
         {
             voicePlaing=false;
@@ -137,6 +141,7 @@ public class GoastClossing : MonoBehaviour
             goastAS.PlayOneShot(voicePatern[patern]);
             patern++;
             patern %= voicePatern.Count;
+            Debug.Log("É{ÉCÉXçƒê∂íÜ");
             yield return new WaitForSeconds(1);
         }
         yield break;
