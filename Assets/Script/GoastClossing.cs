@@ -51,7 +51,7 @@ public class GoastClossing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        goastAS= GetComponent<AudioSource>();
+
     }
     // Update is called once per frame
     void Update()
@@ -90,12 +90,14 @@ public class GoastClossing : MonoBehaviour
             Debug.Log("");
             if (!voicePlaing)
             {
-                playVoice();
                 voicePlaing = true;
+                StartCoroutine(playVoice());
+            }else
+            {
             }
         }else
         {
-            voicePlaing=false;
+			voicePlaing =false;
         }
         float image_Alpha = 1 - (distance / goastApproach);
         if (!isFading && distance < beforeDistance)
@@ -104,7 +106,7 @@ public class GoastClossing : MonoBehaviour
             ChengeAlpha(leftHand, image_Alpha);
             isFading = true;
         }
-        else if(isFading && distance >= beforeDistance){
+        else {
             ChengeAlpha(rightHand, 1);
             ChengeAlpha(leftHand, 1);
             isFading = false;
@@ -142,7 +144,7 @@ public class GoastClossing : MonoBehaviour
             patern++;
             patern %= voicePatern.Count;
             Debug.Log("É{ÉCÉXçƒê∂íÜ");
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
         }
         yield break;
     }

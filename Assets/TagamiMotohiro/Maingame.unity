@@ -1224,7 +1224,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 58ebcc9f45931a14493eb48a4a909bcf, type: 3}
   - {fileID: 21300000, guid: 48f2d98ab2db49c4281f3ffa7e851c5c, type: 3}
   blood: {fileID: 687802179}
-  voicePatern: []
+  voicePatern:
+  - {fileID: 8300000, guid: d5be1eceb68f6df46865032614c36faa, type: 3}
+  - {fileID: 8300000, guid: 8d8eb8bbfe172394e8cc9eee77cfda80, type: 3}
+  - {fileID: 8300000, guid: 2779fe12eb0a7314b8a757fcbb756ba9, type: 3}
   goastAS: {fileID: 723848996}
 --- !u!1 &618875752
 GameObject:
@@ -1893,7 +1896,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.269
   m_Pitch: 1
   Loop: 0
   Mute: 0
