@@ -26,6 +26,8 @@ public class PlayerCtrl : MonoBehaviour
     private float rightRotationTime = 16f;
     private float curveAngle = 90f;
 
+    [SerializeField] private DeathLineControll deathLineControll;
+
 
     // Start is called before the first frame update
     void Start()
@@ -139,7 +141,16 @@ public class PlayerCtrl : MonoBehaviour
 
 
     }
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "start")
+        {
+            Debug.Log("スタート");
+            StartCoroutine(deathLineControll.StartCount());
+            StartCoroutine(deathLineControll.GetPlayerPos());
+
+        }
+    }
 }
 
 

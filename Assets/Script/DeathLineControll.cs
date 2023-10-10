@@ -29,8 +29,8 @@ public class DeathLineControll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(StartCount());
-        StartCoroutine(GetPlayerPos());
+        //StartCoroutine(StartCount());
+        //StartCoroutine(GetPlayerPos());
         targetPos = GetNextPoint();
     }
 
@@ -49,7 +49,7 @@ public class DeathLineControll : MonoBehaviour
         Vector3 movevecter = targetPos - transform.position;//ターゲットの位置に向かうベクトルを生成
         transform.position += (movevecter.normalized*Time.deltaTime)*speed;//向かう量を1で正規化し、そこに速さをかける
 	}
-    IEnumerator GetPlayerPos()//プレイヤーの情報を一定間隔で保存
+    public IEnumerator GetPlayerPos()//プレイヤーの情報を一定間隔で保存
     {
         while (true) {
             playerPath.Add(player.position);
@@ -59,18 +59,18 @@ public class DeathLineControll : MonoBehaviour
             yield return new WaitForSeconds(saveLate);
         }
     }
-	IEnumerator StartCount()//スタートするまで待機するコルーチン
+	public IEnumerator StartCount()//スタートするまで待機するコルーチン
     {
-        float time=0;
+        /*float time=0;
         while (time<=startTime) {
             time += Time.deltaTime;
-            yield return null;
-        }
+        }*/
+        yield return null;
         Debug.Log("幽霊が動き出した");
         isStart = true;
 
     }
-    Vector3 GetNextPoint()//次の目標地点を取得
+    public Vector3 GetNextPoint()//次の目標地点を取得
     {
         Vector3 point;
         if (playerPath.Count == 0)
@@ -91,7 +91,7 @@ public class DeathLineControll : MonoBehaviour
             Debug.Log("プレイヤーに衝突した");
             isHit = true;
         }
-	}
+    }
     public bool GetIsHit() {
         return isHit;
     }
@@ -99,4 +99,5 @@ public class DeathLineControll : MonoBehaviour
 	{
         return isStart;
 	}
+
 }
