@@ -11,6 +11,7 @@ TagManager:
   - TurnRight
   - TurnLeft
   - Gole
+  - start
   layers:
   - Default
   - TransparentFX
