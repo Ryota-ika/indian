@@ -194,6 +194,7 @@ public class Pazlcell : MonoBehaviour
                     // 最も近いピースを探す
                     if (distance < nearestDistance)
                     {
+						//Debug.Log("最も近いピースは" +x.ToString()+y.ToString());
                         nearestPiece = piece;
                         nearestDistance = distance;
                         playerIconIndex = new Vector2Int(x, y); // プレイヤーアイコンの位置のインデックスを更新
@@ -209,21 +210,6 @@ public class Pazlcell : MonoBehaviour
 
             // 最も近いピースが見つかった場合の処理を行う
             Vector2Int newPlayerIconPosition = playerIconIndex;
-			// 新しい位置を使用してプレイヤーアイコンを移動
-			// playerIcon.transform.position = new Vector3();//プレイヤーの位置をと同じ場所にしたい
-
-			//if (newPlayerIconPosition == PiecePrefub.posIndex)
-			//{
-			//	Debug.Log("プレイヤーアイコンの新しい位置: " + newPlayerIconPosition);
-
-			//	// クリック操作を無効にする
-			//	nearestPiece.SetClickEnabled(false);
-			//}
-			//else
-			//{
-			//	// クリック操作を有効にする
-			//	nearestPiece.SetClickEnabled(true);
-			//}
 			foreach (SensingPazl piece in pieces_List)
 			{
 				if (piece != null)
