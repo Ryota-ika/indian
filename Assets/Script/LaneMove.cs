@@ -19,6 +19,7 @@ public class LaneMove : MonoBehaviour//§ì’S“–@“cã@ƒvƒŒƒCƒ„[‚ª¶‰E‚ÌŽÔü‚ðˆ
     [SerializeField]
     float laneMoveTime;
     bool laneChangeNow=false;
+    Vector3 flickBeforePos;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,21 +29,25 @@ public class LaneMove : MonoBehaviour//§ì’S“–@“cã@ƒvƒŒƒCƒ„[‚ª¶‰E‚ÌŽÔü‚ðˆ
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)&&!laneChangeNow)
-		{
-            if (nowLane == LANE_STATE.RIGHT) 
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            Debug.Log("touchŽæ“¾");
+            if (touch.phase == TouchPhase.Moved && !laneChangeNow)
             {
-                StartCoroutine(ChangeLane(leftLanePos.position,laneMoveTime));
-                nowLane = LANE_STATE.LEFT;
+                if (nowLane == LANE_STATE.RIGHT)
+                {
+                    StartCoroutine(ChangeLane(leftLanePos.position, laneMoveTime));
+                    nowLane = LANE_STATE.LEFT;
+                }
+                else if (nowLane == LANE_STATE.LEFT)
+                {
+                    StartCoroutine(ChangeLane(rightLanePos.position, laneMoveTime));
+                    nowLane = LANE_STATE.RIGHT;
+                }
             }
-            else if (nowLane == LANE_STATE.LEFT)
-            {
-                StartCoroutine(ChangeLane(rightLanePos.position, laneMoveTime));
-                nowLane = LANE_STATE.RIGHT;
-			}
-		}
+        }
     }
-
     IEnumerator ChangeLane(Vector3 targetPos,float moveTime) {
         laneChangeNow = true;
         Vector3 pos = transform.position;

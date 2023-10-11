@@ -51,7 +51,6 @@ public class GoastClossing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        goastAS= GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -87,11 +86,10 @@ public class GoastClossing : MonoBehaviour
         }
         if (state != DISTANCE_STATE.DISTANTE)
         {
-            Debug.Log("");
             if (!voicePlaing)
             {
-                playVoice();
                 voicePlaing = true;
+                StartCoroutine(playVoice());
             }
         }else
         {
@@ -142,7 +140,7 @@ public class GoastClossing : MonoBehaviour
             patern++;
             patern %= voicePatern.Count;
             Debug.Log("É{ÉCÉXçƒê∂íÜ");
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
         }
         yield break;
     }
