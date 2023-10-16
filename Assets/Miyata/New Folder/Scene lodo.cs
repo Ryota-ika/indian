@@ -2,20 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class SceneLoder : MonoBehaviour
+public class Scenelodo : MonoBehaviour
 {
-	public void LoadMainGame(){
+	public void LoadMainGame()
+	{
 		SceneManager.LoadScene("Maingame");
 	}
-	public void LoadTitle() {
+	public void LoadTitle()
+	{
 		SceneManager.LoadScene("Start");
 	}
-	public void LoadResult() {
+	public void LoadResult()
+	{
 		SceneManager.LoadScene("Result");
 	}
-    public void LoadClear()
-    {
-        SceneManager.LoadScene("GameClear");
-    }
+	public void LoadClear()
+	{
+		SceneManager.LoadScene("GameClear");
+	}
 }
