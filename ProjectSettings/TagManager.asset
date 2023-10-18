@@ -6,6 +6,15 @@ TagManager:
   tags:
   - Road_1A
   - player
+<<<<<<< Updated upstream
+=======
+  - Pazzle
+  - Wall
+  - TurnRight
+  - TurnLeft
+  - Gole
+  - iconTurnRiht
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

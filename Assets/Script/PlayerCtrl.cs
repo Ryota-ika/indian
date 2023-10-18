@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< Updated upstream
 public class PlayerCtrl : MonoBehaviour
+=======
+public class Playjjj: MonoBehaviour
+>>>>>>> Stashed changes
 {
     [SerializeField] private GameObject player;
     // Start is called before the first frame update
