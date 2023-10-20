@@ -44,14 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ea03c7e516c464abe6eb44a7482421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMapSize: {x: 0, y: 0}
-  player_List:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  player: {fileID: 0}
+  maxPlayerDataNum: 0
