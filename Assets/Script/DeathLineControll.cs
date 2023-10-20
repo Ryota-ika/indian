@@ -29,9 +29,9 @@ public class DeathLineControll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(StartCount());
-        //StartCoroutine(GetPlayerPos());
-        targetPos = GetNextPoint();
+		StartCoroutine(StartCount());
+		StartCoroutine(GetPlayerPos());
+		targetPos = GetNextPoint();
     }
 
     // Update is called once per frame
@@ -61,11 +61,12 @@ public class DeathLineControll : MonoBehaviour
     }
 	public IEnumerator StartCount()//スタートするまで待機するコルーチン
     {
-        /*float time=0;
-        while (time<=startTime) {
-            time += Time.deltaTime;
-        }*/
-        yield return null;
+		float time = 0;
+		while (time <= startTime)
+		{
+			time += Time.deltaTime;
+		}
+		yield return null;
         Debug.Log("幽霊が動き出した");
         isStart = true;
 

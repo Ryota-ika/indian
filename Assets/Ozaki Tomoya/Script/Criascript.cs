@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Criascript : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class Criascript : MonoBehaviour
         if (other.gameObject.tag == "player")
         {
             Debug.Log("ÉSÅ[ÉãÇ…è’ìÀÇµÇΩ");
+            SceneManager.LoadScene("GameClear");
             isHit = true;
         }
     }
