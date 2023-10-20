@@ -4216,6 +4216,18 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5288783186838962777, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
+      propertyPath: goast
+      value: 
+      objectReference: {fileID: 575277457}
+    - target: {fileID: 5288783186838962777, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
+      propertyPath: button
+      value: 
+      objectReference: {fileID: 1701694417}
+    - target: {fileID: 5288783186838962777, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288783186838962777, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
       propertyPath: roadManager
       value: 
       objectReference: {fileID: 454004166}
@@ -4272,6 +4284,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5288783187181008265, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5288783187181008265, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
       propertyPath: laneMoveTime
       value: 0.05
       objectReference: {fileID: 0}
@@ -4305,6 +4321,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
+--- !u!1 &5288783187459938701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5288783187181007474, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
+  m_PrefabInstance: {fileID: 5288783187459938700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5288783187459938702 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5288783187659871916, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
+  m_PrefabInstance: {fileID: 5288783187459938700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5288783187459938703 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5288783187937092819, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
+  m_PrefabInstance: {fileID: 5288783187459938700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5288783187459938704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5288783187459938701}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbfec27df6647a44c9597411f5f96e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightLanePos: {fileID: 5288783187459938703}
+  leftLanePos: {fileID: 5288783187459938702}
+  laneMoveTime: 0.05
 --- !u!1001 &6271826861124950662
 PrefabInstance:
   m_ObjectHideFlags: 0

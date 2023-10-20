@@ -77,7 +77,9 @@ public class ChangeScreen : MonoBehaviour
             //onOffText.text = "Return";
             btnImage.sprite = createSprite;
             Panel.SetActive(true);
-            playerCtrl.StopPlayer();
+            //playerCtrl.StopPlayer();
+            playerCtrl.moveSpeed = 5f;
+            playerCtrl.MovePlayer();
             isCoolDown=false;//panelがfalseになる場合、クールダウンを無くす
             yield break;//クールダウンを続けないためにコルーチン終了
         }

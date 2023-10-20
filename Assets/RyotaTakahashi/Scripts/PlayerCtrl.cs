@@ -1,4 +1,5 @@
 //7/25
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -9,6 +10,8 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]
     RoadManager roadManager;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject button;
+    [SerializeField] private GameObject goast;
     //現在の道のオブジェクト
     public float moveSpeed = 13f;
     private bool turnRight = false;
@@ -32,6 +35,8 @@ public class PlayerCtrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        button.SetActive(false);
+        goast.SetActive(false);
     }
 
     // Update is called once per frame
@@ -52,6 +57,10 @@ public class PlayerCtrl : MonoBehaviour
         player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
 
     }
+    /*public void HalfMovePlayer()
+    {
+        player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+    }*/
 
 
    public void MoveTurnRight()
@@ -145,10 +154,11 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (other.gameObject.tag == "start")
         {
+            button.SetActive(true);
+            goast.SetActive(true);
             Debug.Log("スタート");
             StartCoroutine(deathLineControll.StartCount());
             StartCoroutine(deathLineControll.GetPlayerPos());
-
         }
     }
 }
