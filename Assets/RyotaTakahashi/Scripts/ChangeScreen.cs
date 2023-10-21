@@ -19,8 +19,6 @@ public class ChangeScreen : MonoBehaviour
     public Transform panelMaxPos;
     private bool onOffButton = false;
     private bool isCoolDown = false;
-    private float cullentMoveSpeed;
-
 
     private void Awake()
     {
@@ -49,7 +47,7 @@ public class ChangeScreen : MonoBehaviour
             btnImage.sprite = bikeSprite;
             Panel.SetActive(false);
             //StartCoroutine(TransitionCreate(true));
-            playerCtrl.moveSpeed = 13f;
+            playerCtrl.moveSpeed = playerCtrl.currentMoveSpeed;
             playerCtrl.MovePlayer();
         }
         else

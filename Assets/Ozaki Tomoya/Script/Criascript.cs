@@ -24,7 +24,7 @@ public class Criascript : MonoBehaviour
     {
         if (other.gameObject.tag == "player")
         {
-            Debug.Log("ƒS[ƒ‹‚ÉÕ“Ë‚µ‚½");
+            Debug.Log("ƒS[ƒ‹‚ÉÕ“Ë‚µ‚½"+other.name);
             SceneManager.LoadScene("GameClear");
             isHit = true;
         }

@@ -11,6 +11,7 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] private GameObject player;
     //現在の道のオブジェクト
     public float moveSpeed = 13f;
+    public float currentMoveSpeed;
     private bool turnRight = false;
     private bool turnLeft = false;
     private Quaternion cullentRotation;
@@ -25,13 +26,13 @@ public class PlayerCtrl : MonoBehaviour
     private float leftRotationTime = 8f;
     private float rightRotationTime = 16f;
     private float curveAngle = 90f;
-
     [SerializeField] private DeathLineControll deathLineControll;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        currentMoveSpeed = moveSpeed;
     }
 
     // Update is called once per frame

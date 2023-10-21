@@ -35,6 +35,7 @@ public class InitPieces : EditorWindow
 
 		if (GUILayout.Button("ê›íËäJén"))
 		{
+			row = 5;
 			GameObject[] cullentRoad = GameObject.FindGameObjectsWithTag("Road_1A");
 			GameObject[] cullentPazzle = GameObject.FindGameObjectsWithTag("Pazzle");
 			foreach (GameObject item in cullentRoad)
