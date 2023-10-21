@@ -9,7 +9,9 @@ public class GameSystem : MonoBehaviour
     //スタートボタンを押したら実行する
     public void StartGame()
     {
-        SceneManager.LoadScene("Maingame 1");
+        SceneManager.LoadScene("Maingame");// ３×３の呼び出し
+
+      /*  SceneManager.LoadScene("Maingame 1");// 呼び出し*/
     }
 
     // Start is called before the first frame update
@@ -21,6 +23,7 @@ public class GameSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+       
     }
 }

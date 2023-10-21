@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.043847494, g: 0.07874388, b: 0.15197772, a: 1}
+  m_IndirectSpecularColor: {r: 0.044946782, g: 0.07955121, b: 0.15308273, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -556,23 +556,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9058262539546414678, guid: de78adc13c0029f4a85978b7f0d6243e, type: 3}
   m_PrefabInstance: {fileID: 1426531401}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &334836921 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3806803017832944784, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
-  m_PrefabInstance: {fileID: 1934943943}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &334836923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334836921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ddf5d7fa02431e42b00669823a05ec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &353872840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 792612562962315163, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
@@ -594,8 +577,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.2301488, z: 1}
-  m_Center: {x: 0, y: 0.61507446, z: 0}
+  m_Size: {x: 0.5, y: 1, z: 0.08}
+  m_Center: {x: 0, y: 0.61507446, z: -0.46}
 --- !u!114 &353872845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,7 +1112,7 @@ MonoBehaviour:
   mySL: {fileID: 575277458}
   deth: {fileID: 723848991}
   gameOverText: {fileID: 968696657}
-  clear: {fileID: 334836923}
+  clear: {fileID: 0}
 --- !u!4 &575277460
 Transform:
   m_ObjectHideFlags: 0
@@ -3755,7 +3738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1753562001
 Transform:
   m_ObjectHideFlags: 0
@@ -3792,6 +3775,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 210685432}
     m_Modifications:
+    - target: {fileID: 990144447, guid: e47a98fc5799f3944acfec1841ebf874, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 990144447, guid: e47a98fc5799f3944acfec1841ebf874, type: 3}
       propertyPath: m_TagString
       value: TurnLeft
@@ -3952,10 +3939,44 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3806803017832944809, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
-      propertyPath: m_Constraints
-      value: 126
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3806803017832944809, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806803017832944813, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806803017832944814, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
+      propertyPath: m_Size.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806803017832944814, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
+      propertyPath: m_Size.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806803017832944814, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806803017832944814, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806803017832944814, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806803017832944814, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3806803017832944809, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
+    - {fileID: 3806803017832944813, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
 --- !u!1 &1945874632
 GameObject:
