@@ -1,4 +1,5 @@
 //7/25
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -9,7 +10,9 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]
     RoadManager roadManager;
     [SerializeField] private GameObject player;
-    //Œ»İ‚Ì“¹‚ÌƒIƒuƒWƒFƒNƒg
+    [SerializeField] private GameObject button;
+    [SerializeField] private GameObject goast;
+    //ï¿½ï¿½ï¿½İ‚Ì“ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½g
     public float moveSpeed = 13f;
     public float currentMoveSpeed;
     private bool turnRight = false;
@@ -33,6 +36,8 @@ public class PlayerCtrl : MonoBehaviour
     void Start()
     {
         currentMoveSpeed = moveSpeed;
+        button.SetActive(false);
+        goast.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,11 +58,15 @@ public class PlayerCtrl : MonoBehaviour
         player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
 
     }
+    /*public void HalfMovePlayer()
+    {
+        player.transform.position += player.transform.forward * moveSpeed * Time.deltaTime;
+    }*/
 
 
    public void MoveTurnRight()
     {
-        //1‰ñ‚¾‚¯ˆ—‚·‚é
+        //1ï¿½ñ‚¾‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (timer <= 0)
         {
             //Debug.Log("transform.rotation" + player.transform.rotation.ToString());
@@ -69,7 +78,7 @@ public class PlayerCtrl : MonoBehaviour
         }
         if (timer <= curveCompleteTime)
         {
-            //’Êí‚Ì‰~‰^“®
+            //ï¿½Êï¿½Ì‰~ï¿½^ï¿½ï¿½
             timer += Time.deltaTime;
             player.transform.rotation = Quaternion.Lerp(cullentRotation, rightRotation, 
                 (timer/curveCompleteTime)*(timer / curveCompleteTime));
@@ -83,7 +92,7 @@ public class PlayerCtrl : MonoBehaviour
 
     private void MoveTurnLeft()
     {
-        //1‰ñ‚¾‚¯ˆ—‚·‚é
+        //1ï¿½ñ‚¾‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (timer <= 0)
         {
             //Debug.Log("transform.rotation" + player.transform.rotation.ToString());
@@ -95,7 +104,7 @@ public class PlayerCtrl : MonoBehaviour
         }
         if (timer <= curveCompleteTime)
         {
-            //’Êí‚Ì‰~‰^“®
+            //ï¿½Êï¿½Ì‰~ï¿½^ï¿½ï¿½
             timer += Time.deltaTime;
             player.transform.rotation = Quaternion.Lerp(cullentRotation, leftRotation, timer/curveCompleteTime);
         }
@@ -131,7 +140,7 @@ public class PlayerCtrl : MonoBehaviour
         if (collision.gameObject.tag == "TurnRight")
         {
             turnRight = true;
-            //y²‚ğ’†S‚É‰ñ“]
+            //yï¿½ï¿½ï¿½ğ’†Sï¿½É‰ï¿½]
             //targetRotation = player.transform.rotation * Quaternion.Euler(0f, 90f, 0f);
             /*player.transform.RotateAround(center,axis,360/period*Time.deltaTime);*/
         }
@@ -146,10 +155,11 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (other.gameObject.tag == "start")
         {
-            Debug.Log("ƒXƒ^[ƒg");
+            button.SetActive(true);
+            goast.SetActive(true);
+            Debug.Log("ï¿½Xï¿½^ï¿½[ï¿½g");
             StartCoroutine(deathLineControll.StartCount());
             StartCoroutine(deathLineControll.GetPlayerPos());
-
         }
     }
 }
