@@ -1112,7 +1112,7 @@ MonoBehaviour:
   mySL: {fileID: 575277458}
   deth: {fileID: 723848991}
   gameOverText: {fileID: 968696657}
-  clear: {fileID: 0}
+  clear: {fileID: 353872845}
 --- !u!4 &575277460
 Transform:
   m_ObjectHideFlags: 0

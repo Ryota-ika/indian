@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 17643924}
   - component: {fileID: 17643923}
   m_Layer: 0
-  m_Name: straight_Tate(Clone)
+  m_Name: 14 straight_Tate(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,7 +443,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17643922}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 84, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -452,7 +452,7 @@ Transform:
   - {fileID: 1059780079}
   m_Father: {fileID: 1028593835}
   m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &22656648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,7 +1422,7 @@ GameObject:
   - component: {fileID: 67290394}
   - component: {fileID: 67290393}
   m_Layer: 0
-  m_Name: straight_Tate(Clone)
+  m_Name: 2 straight_Tate(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1448,7 +1448,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67290392}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 84, y: 0, z: 252}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1457,7 +1457,7 @@ Transform:
   - {fileID: 917866627}
   m_Father: {fileID: 1028593835}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &71304779
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,16 +2375,16 @@ MonoBehaviour:
   - {fileID: 2089146239}
   - {fileID: 1977419251}
   - {fileID: 458168620}
-  - {fileID: 2009884721}
-  - {fileID: 2009884721}
   - {fileID: 1309469647}
+  - {fileID: 2009884721}
+  - {fileID: 1169399384}
   - {fileID: 1687469163}
   - {fileID: 1375416496}
-  - {fileID: 1814231220}
-  - {fileID: 1169399384}
+  - {fileID: 235878877}
+  - {fileID: 343935292}
   - {fileID: 17643922}
   - {fileID: 619611490}
-  - {fileID: 235878877}
+  - {fileID: 1814231220}
   nearestObjectIndex: 0
   icon: {fileID: 1492938066}
   playerTransform: {fileID: 778876676}
@@ -2949,7 +2949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &131321663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4886,7 +4886,7 @@ GameObject:
   - component: {fileID: 227141161}
   - component: {fileID: 227141160}
   m_Layer: 3
-  m_Name: straight_Tate_Pazzle(Clone)
+  m_Name: 16 Curve_Left_Down
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4899,14 +4899,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227141158}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.75, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1112246832}
   m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &227141160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4990,7 +4990,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d8a0e77700423664a8e967bccdc5c305, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e63f1699506b364e964836c79eb666e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5144,7 +5144,7 @@ GameObject:
   - component: {fileID: 235878878}
   - component: {fileID: 235878879}
   m_Layer: 0
-  m_Name: Corner_RightUp(Clone) (1)
+  m_Name: 12 Corner_RightUp(Clone) (1)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5158,7 +5158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235878877}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 252, y: 0, z: 0}
+  m_LocalPosition: {x: 252, y: 0, z: 84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5166,7 +5166,7 @@ Transform:
   - {fileID: 1738676845}
   - {fileID: 1649512665}
   m_Father: {fileID: 1028593835}
-  m_RootOrder: 15
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &235878879
 MonoBehaviour:
@@ -7166,7 +7166,7 @@ GameObject:
   - component: {fileID: 329214726}
   - component: {fileID: 329214725}
   m_Layer: 3
-  m_Name: straight_Tate_Pazzle(Clone)
+  m_Name: 3 straight_Tate_Pazzle(Clone)
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7739,7 +7739,7 @@ GameObject:
   - component: {fileID: 343935294}
   - component: {fileID: 343935293}
   m_Layer: 0
-  m_Name: straight_Yoko(Clone)
+  m_Name: 13 straight_Yoko(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7765,15 +7765,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343935292}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 168, y: 0, z: 168}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1986417542}
   - {fileID: 1887676646}
   m_Father: {fileID: 1028593835}
-  m_RootOrder: 6
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &348604340
 GameObject:
@@ -10866,7 +10866,7 @@ GameObject:
   - component: {fileID: 458168622}
   - component: {fileID: 458168621}
   m_Layer: 0
-  m_Name: straight_Yoko(Clone)
+  m_Name: 6 straight_Yoko(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10892,7 +10892,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458168620}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 84, y: 0, z: 168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12188,7 +12188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520810358}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 7.3, y: 5.21, z: 1.5}
+  m_LocalPosition: {x: 7.3, y: 5.21, z: 1.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12453,7 +12453,7 @@ GameObject:
   - component: {fileID: 527578466}
   - component: {fileID: 527578465}
   m_Layer: 3
-  m_Name: straight_Yoko_Pazzle(Clone)
+  m_Name: 5 straight_Yoko_Pazzle(Clone)
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13731,7 +13731,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 58ebcc9f45931a14493eb48a4a909bcf, type: 3}
   - {fileID: 21300000, guid: 48f2d98ab2db49c4281f3ffa7e851c5c, type: 3}
   blood: {fileID: 1392250906}
-  voicePatern: []
+  voicePatern:
+  - {fileID: 8300000, guid: d5be1eceb68f6df46865032614c36faa, type: 3}
+  - {fileID: 8300000, guid: 8d8eb8bbfe172394e8cc9eee77cfda80, type: 3}
+  - {fileID: 8300000, guid: 2779fe12eb0a7314b8a757fcbb756ba9, type: 3}
   goastAS: {fileID: 723848996}
 --- !u!1 &580348857
 GameObject:
@@ -14351,7 +14354,7 @@ GameObject:
   - component: {fileID: 619611492}
   - component: {fileID: 619611491}
   m_Layer: 0
-  m_Name: straight_Tate(Clone)
+  m_Name: 15 straight_Tate(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14377,7 +14380,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619611490}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 168, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15074,7 +15077,7 @@ PrefabInstance:
     - target: {fileID: 1759522507127682456, guid: 5b2051e42a1b68d43b3020ff59ad4fa0, type: 3}
       propertyPath: pieces_List.Array.data[0]
       value: 
-      objectReference: {fileID: 1127073590}
+      objectReference: {fileID: 1409491701}
     - target: {fileID: 1759522507127682456, guid: 5b2051e42a1b68d43b3020ff59ad4fa0, type: 3}
       propertyPath: pieces_List.Array.data[1]
       value: 
@@ -15098,7 +15101,7 @@ PrefabInstance:
     - target: {fileID: 1759522507127682456, guid: 5b2051e42a1b68d43b3020ff59ad4fa0, type: 3}
       propertyPath: pieces_List.Array.data[6]
       value: 
-      objectReference: {fileID: 1127073590}
+      objectReference: {fileID: 2004510792}
     - target: {fileID: 1759522507127682456, guid: 5b2051e42a1b68d43b3020ff59ad4fa0, type: 3}
       propertyPath: pieces_List.Array.data[7]
       value: 
@@ -15122,7 +15125,7 @@ PrefabInstance:
     - target: {fileID: 1759522507127682456, guid: 5b2051e42a1b68d43b3020ff59ad4fa0, type: 3}
       propertyPath: pieces_List.Array.data[12]
       value: 
-      objectReference: {fileID: 2004510792}
+      objectReference: {fileID: 1994061301}
     - target: {fileID: 1759522507127682456, guid: 5b2051e42a1b68d43b3020ff59ad4fa0, type: 3}
       propertyPath: pieces_List.Array.data[13]
       value: 
@@ -16872,7 +16875,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723848990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.78, y: 1.55, z: 255.01}
+  m_LocalPosition: {x: -3.78, y: 1.55, z: -40.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18262,6 +18265,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5288783186838962779, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
   m_PrefabInstance: {fileID: 5288783187459938700}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &778876679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778876673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c6e9d73dc35a042b8e22a887702612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnRight: {fileID: 1153900441}
+  TurnLeft: {fileID: 1566267295}
 --- !u!1 &779550311
 GameObject:
   m_ObjectHideFlags: 0
@@ -19890,8 +19907,8 @@ GameObject:
   - component: {fileID: 843804115}
   - component: {fileID: 843804114}
   - component: {fileID: 843804113}
-  m_Layer: 3
-  m_Name: Corner_LeftDown_Pazzle(Clone)
+  m_Layer: 0
+  m_Name: 4 Goal
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20846,7 +20863,7 @@ GameObject:
   - component: {fileID: 889198687}
   - component: {fileID: 889198686}
   m_Layer: 3
-  m_Name: straight_Yoko_Pazzle(Clone)
+  m_Name: 12 straight_Yoko_Pazzle(Clone)
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20859,14 +20876,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889198684}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0.75, y: 0.25, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1112246832}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &889198686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20950,7 +20967,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7e63f1699506b364e964836c79eb666e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d8a0e77700423664a8e967bccdc5c305, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21166,7 +21183,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 792612562962315163, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
       propertyPath: m_Name
-      value: Gole
+      value: 4 Gole
       objectReference: {fileID: 0}
     - target: {fileID: 792612562962315163, guid: f24ad18151732e14ca22a2c5eef0eb12, type: 3}
       propertyPath: m_TagString
@@ -22618,15 +22635,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955721419}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -1.1, y: 0.92, z: 69.3}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.91, y: 0.92, z: -34.27}
   m_LocalScale: {x: 0.7, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1795748308}
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &958267586
 GameObject:
   m_ObjectHideFlags: 0
@@ -24374,16 +24391,16 @@ Transform:
   - {fileID: 2089146240}
   - {fileID: 1977419253}
   - {fileID: 458168622}
-  - {fileID: 343935294}
-  - {fileID: 2009884723}
   - {fileID: 1309469649}
+  - {fileID: 2009884723}
+  - {fileID: 1169399386}
   - {fileID: 1687469165}
   - {fileID: 1375416498}
-  - {fileID: 1814231222}
-  - {fileID: 1169399386}
+  - {fileID: 235878878}
+  - {fileID: 343935294}
   - {fileID: 17643924}
   - {fileID: 619611492}
-  - {fileID: 235878878}
+  - {fileID: 1814231222}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26095,7 +26112,7 @@ GameObject:
   - component: {fileID: 1107045859}
   m_Layer: 5
   m_Name: Left_Hand
-  m_TagString: Untagged
+  m_TagString: Gole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26358,12 +26375,12 @@ Transform:
   - {fileID: 843804112}
   - {fileID: 527578464}
   - {fileID: 1958192783}
-  - {fileID: 1994061297}
+  - {fileID: 2004510788}
   - {fileID: 1127073586}
   - {fileID: 1731298277}
   - {fileID: 2059340312}
   - {fileID: 889198685}
-  - {fileID: 2004510788}
+  - {fileID: 1994061297}
   - {fileID: 1769905586}
   - {fileID: 1259379728}
   - {fileID: 227141159}
@@ -26518,7 +26535,7 @@ GameObject:
   - component: {fileID: 1127073588}
   - component: {fileID: 1127073587}
   m_Layer: 3
-  m_Name: straight_Yoko_Pazzle(Clone)
+  m_Name: 8 straight_Yoko_Pazzle(Clone)
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27762,7 +27779,7 @@ GameObject:
   - component: {fileID: 1169399386}
   - component: {fileID: 1169399385}
   m_Layer: 0
-  m_Name: Corner_RightUp(Clone)
+  m_Name: 9 Corner_RightUp(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27788,8 +27805,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169399384}
-  m_LocalRotation: {x: -0, y: -0.7071037, z: -0, w: 0.7071099}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27797,7 +27814,7 @@ Transform:
   - {fileID: 413119653}
   - {fileID: 1278530410}
   m_Father: {fileID: 1028593835}
-  m_RootOrder: 12
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &1173644914
 PrefabInstance:
@@ -29393,7 +29410,7 @@ GameObject:
   - component: {fileID: 1259379730}
   - component: {fileID: 1259379729}
   m_Layer: 3
-  m_Name: straight_Tate_Pazzle(Clone)
+  m_Name: 15 straight_Tate_Pazzle(Clone)
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30353,7 +30370,7 @@ GameObject:
   - component: {fileID: 1309469649}
   - component: {fileID: 1309469648}
   m_Layer: 0
-  m_Name: straight_Yoko(Clone)
+  m_Name: 7 straight_Yoko(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30379,15 +30396,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309469647}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 84}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 168, y: 0, z: 168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1157783215}
   - {fileID: 1269774958}
   m_Father: {fileID: 1028593835}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1311095095
 GameObject:
@@ -31662,7 +31679,7 @@ GameObject:
   - component: {fileID: 1375416498}
   - component: {fileID: 1375416497}
   m_Layer: 0
-  m_Name: Void_Pos(Clone)
+  m_Name: 11 Void_Pos(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31688,7 +31705,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375416496}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 168, y: 0, z: 84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32656,7 +32673,7 @@ GameObject:
   - component: {fileID: 1409491699}
   - component: {fileID: 1409491698}
   m_Layer: 3
-  m_Name: straight_Yoko_Pazzle(Clone)
+  m_Name: 1 straight_Yoko_Pazzle(Clone)
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34407,7 +34424,7 @@ GameObject:
   - component: {fileID: 1467175553}
   - component: {fileID: 1467175552}
   m_Layer: 0
-  m_Name: straight_Tate(Clone)
+  m_Name: 3 straight_Tate(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34433,7 +34450,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467175551}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 168, y: 0, z: 252}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34442,7 +34459,7 @@ Transform:
   - {fileID: 230990145}
   m_Father: {fileID: 1028593835}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1469710860
 GameObject:
   m_ObjectHideFlags: 0
@@ -36051,7 +36068,7 @@ GameObject:
   - component: {fileID: 1515531307}
   - component: {fileID: 1515531306}
   m_Layer: 3
-  m_Name: straight_Tate_Pazzle(Clone)
+  m_Name: 2 straight_Tate_Pazzle(Clone)
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39901,7 +39918,7 @@ GameObject:
   - component: {fileID: 1687469165}
   - component: {fileID: 1687469164}
   m_Layer: 0
-  m_Name: straight_Yoko(Clone)
+  m_Name: 10 straight_Yoko(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39927,7 +39944,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687469163}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 84, y: 0, z: 84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -39936,7 +39953,7 @@ Transform:
   - {fileID: 1546427}
   m_Father: {fileID: 1028593835}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1690945419
 GameObject:
   m_ObjectHideFlags: 0
@@ -41227,7 +41244,7 @@ GameObject:
   - component: {fileID: 1731298279}
   - component: {fileID: 1731298278}
   m_Layer: 3
-  m_Name: straight_Yoko_Pazzle(Clone)
+  m_Name: 9  Curve_RightUp
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41331,7 +41348,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7e63f1699506b364e964836c79eb666e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae1ffc493ce068146a68c689c5913ac8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -42618,7 +42635,7 @@ GameObject:
   - component: {fileID: 1769905588}
   - component: {fileID: 1769905587}
   m_Layer: 3
-  m_Name: straight_Tate_Pazzle(Clone)
+  m_Name: 14 straight_Tate_Pazzle(Clone)
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43319,7 +43336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795748307}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.95, y: 6.49, z: -0.5299988}
+  m_LocalPosition: {x: -1.95, y: 6.49, z: 7.78}
   m_LocalScale: {x: 2, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43777,7 +43794,7 @@ GameObject:
   - component: {fileID: 1814231222}
   - component: {fileID: 1814231221}
   m_Layer: 0
-  m_Name: straight_Yoko(Clone)
+  m_Name: 16 straight_Yoko(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43803,15 +43820,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814231220}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 252, y: 0, z: 84}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 252, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 836454965}
   - {fileID: 1709220868}
   m_Father: {fileID: 1028593835}
-  m_RootOrder: 11
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1823751814
 GameObject:
@@ -46319,7 +46336,7 @@ GameObject:
   - component: {fileID: 1916074629}
   - component: {fileID: 1916074628}
   m_Layer: 0
-  m_Name: straight_Yoko(Clone)
+  m_Name: 1 straight_Yoko(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46345,7 +46362,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916074627}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 252}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47071,7 +47088,7 @@ GameObject:
   - component: {fileID: 1958192785}
   - component: {fileID: 1958192784}
   m_Layer: 3
-  m_Name: straight_Yoko_Pazzle(Clone)
+  m_Name: 6 straight_Yoko_Pazzle(Clone)
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47659,7 +47676,7 @@ GameObject:
   - component: {fileID: 1977419253}
   - component: {fileID: 1977419252}
   m_Layer: 0
-  m_Name: straight_Yoko(Clone)
+  m_Name: 5 straight_Yoko(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47685,7 +47702,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977419251}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -48033,7 +48050,7 @@ GameObject:
   - component: {fileID: 1994061299}
   - component: {fileID: 1994061298}
   m_Layer: 3
-  m_Name: straight_Yoko_Pazzle(Clone)
+  m_Name: 13 straight_Yoko_Pazzle(Clone)
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48047,12 +48064,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994061296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1112246832}
-  m_RootOrder: 6
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &1994061298
 MonoBehaviour:
@@ -48688,7 +48705,7 @@ GameObject:
   - component: {fileID: 2004510790}
   - component: {fileID: 2004510789}
   m_Layer: 3
-  m_Name: Corner_RightUp_Pazzle(Clone)
+  m_Name: 7 straight_Yoko_Pazzle(Clone)
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48702,12 +48719,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004510787}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1112246832}
-  m_RootOrder: 11
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!65 &2004510789
 BoxCollider:
@@ -48792,7 +48809,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d8a0e77700423664a8e967bccdc5c305, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e63f1699506b364e964836c79eb666e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -48913,7 +48930,7 @@ GameObject:
   - component: {fileID: 2009884723}
   - component: {fileID: 2009884722}
   m_Layer: 0
-  m_Name: straight_Yoko(Clone)
+  m_Name: 8 straight_Yoko(Clone)
   m_TagString: Road_1A
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48939,7 +48956,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009884721}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 252, y: 0, z: 168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -50700,7 +50717,7 @@ GameObject:
   - component: {fileID: 2059340314}
   - component: {fileID: 2059340313}
   m_Layer: 3
-  m_Name: straight_Yoko_Pazzle(Clone)
+  m_Name: 10 straight_Yoko_Pazzle(Clone)
   m_TagString: Pazzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50804,7 +50821,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7e63f1699506b364e964836c79eb666e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5f16a45babcd39945919d3cc2d4fd8a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -52754,7 +52771,7 @@ PrefabInstance:
     - target: {fileID: 5288783186838962777, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
       propertyPath: button
       value: 
-      objectReference: {fileID: 1701694417}
+      objectReference: {fileID: 0}
     - target: {fileID: 5288783186838962777, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
       propertyPath: roadManager
       value: 
@@ -52769,7 +52786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288783186838962779, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 253.59
+      value: -3.14
       objectReference: {fileID: 0}
     - target: {fileID: 5288783186838962779, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
       propertyPath: m_LocalPosition.y
@@ -52777,7 +52794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5288783186838962779, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.18
+      value: -31.6
       objectReference: {fileID: 0}
     - target: {fileID: 5288783186838962779, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
       propertyPath: m_LocalRotation.w
@@ -52897,6 +52914,14 @@ PrefabInstance:
       value: RoadManeger
       objectReference: {fileID: 0}
     - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
+      propertyPath: maxMapSize.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
+      propertyPath: maxMapSize.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
       propertyPath: pazzleManeger
       value: 
       objectReference: {fileID: 374429944}
@@ -52923,7 +52948,7 @@ PrefabInstance:
     - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
       propertyPath: road_List.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2089146239}
     - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
       propertyPath: road_List.Array.data[4]
       value: 
@@ -52935,7 +52960,7 @@ PrefabInstance:
     - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
       propertyPath: road_List.Array.data[6]
       value: 
-      objectReference: {fileID: 343935292}
+      objectReference: {fileID: 1309469647}
     - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
       propertyPath: road_List.Array.data[7]
       value: 
@@ -52943,7 +52968,7 @@ PrefabInstance:
     - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
       propertyPath: road_List.Array.data[8]
       value: 
-      objectReference: {fileID: 1309469647}
+      objectReference: {fileID: 1169399384}
     - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
       propertyPath: road_List.Array.data[9]
       value: 
@@ -52955,11 +52980,11 @@ PrefabInstance:
     - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
       propertyPath: road_List.Array.data[11]
       value: 
-      objectReference: {fileID: 1814231220}
+      objectReference: {fileID: 235878877}
     - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
       propertyPath: road_List.Array.data[12]
       value: 
-      objectReference: {fileID: 1169399384}
+      objectReference: {fileID: 343935292}
     - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
       propertyPath: road_List.Array.data[13]
       value: 
@@ -52971,6 +52996,6 @@ PrefabInstance:
     - target: {fileID: 6271826859722882127, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}
       propertyPath: road_List.Array.data[15]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1814231220}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e1f623b1b25d044f9eab0707a5929b0, type: 3}

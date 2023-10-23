@@ -19,7 +19,7 @@ public class MapSetPlayer : MonoBehaviour
     {
         FindNearestObject();
         IconRoatition();
-        Debug.Log(nearestObjectIndex);
+       // Debug.Log(nearestObjectIndex);
     }
 
     void FindNearestObject()
