@@ -8,12 +8,10 @@ public class MapSetPlayer : MonoBehaviour
 {
     public GameObject targetObject; // 対象のオブジェクト
     public List<GameObject> otherObjects; // 他のオブジェクトのリスト
-
     private GameObject nearestObject; // 最も近いオブジェクト
     public int nearestObjectIndex = 0; // 最も近いオブジェクトのインデックス
     [SerializeField]
     private GameObject icon; // アイコンのインスタンス
-    private int iconIndex = -1; // アイコンの番号
     public Transform playerTransform; // プレイヤーのトランスフォームをInspectorで関連付ける
     private void Update()
     {

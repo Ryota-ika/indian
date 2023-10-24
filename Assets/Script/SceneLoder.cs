@@ -18,4 +18,9 @@ public class SceneLoder : MonoBehaviour
     {
         SceneManager.LoadScene("GameClear");
     }
+	public void NextGame()
+	{
+		SceneManager.LoadScene("Maingame 1");
+
+    }
 }
