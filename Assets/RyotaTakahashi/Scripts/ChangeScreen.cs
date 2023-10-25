@@ -43,10 +43,10 @@ public class ChangeScreen : MonoBehaviour
 
     private IEnumerator ButtonCoolDown()
     {
-        onOffButton = !onOffButton;
-        if (onOffButton)
+		onOffButton = !onOffButton;
+		if (onOffButton)
         {
-            btnImage.sprite = bikeSprite;
+            btnImage.sprite = createSprite;
             Panel.SetActive(false);
             //StartCoroutine(TransitionCreate(true));
             playerCtrl.moveSpeed = 13f;
@@ -54,7 +54,8 @@ public class ChangeScreen : MonoBehaviour
         }
         else
         {
-            btnImage.sprite = createSprite;
+            btnImage.sprite = bikeSprite;
+
             Panel.SetActive(true);
             //StartCoroutine(TransitionCreate(false));
             playerCtrl.StopPlayer();

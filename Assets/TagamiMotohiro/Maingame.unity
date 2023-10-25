@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.043847494, g: 0.07874388, b: 0.15197772, a: 1}
+  m_IndirectSpecularColor: {r: 0.044946782, g: 0.07955121, b: 0.15308273, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2075,7 +2075,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5288783186838962779, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
   m_PrefabInstance: {fileID: 5288783187459938700}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &778876677
+--- !u!114 &778876678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2084,11 +2084,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 778876673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ea03c7e516c464abe6eb44a7482421, type: 3}
+  m_Script: {fileID: 11500000, guid: a4c6e9d73dc35a042b8e22a887702612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 778876676}
-  maxPlayerDataNum: 2
+  TurnRight: {fileID: 1353957953}
+  TurnLeft: {fileID: 1542439221}
+  button: {fileID: 1701694420}
 --- !u!1 &800821971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2990,6 +2991,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9058262539546414673, guid: de78adc13c0029f4a85978b7f0d6243e, type: 3}
   m_PrefabInstance: {fileID: 1394114814}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &1353957953 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6542192277533201269, guid: e47a98fc5799f3944acfec1841ebf874, type: 3}
+  m_PrefabInstance: {fileID: 1821322760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1394114814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3349,6 +3355,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436023302}
   m_CullTransparentMesh: 1
+--- !u!64 &1542439221 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 990144449, guid: e47a98fc5799f3944acfec1841ebf874, type: 3}
+  m_PrefabInstance: {fileID: 1821322760}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1552214447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3777,7 +3788,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 990144447, guid: e47a98fc5799f3944acfec1841ebf874, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 990144447, guid: e47a98fc5799f3944acfec1841ebf874, type: 3}
       propertyPath: m_TagString
