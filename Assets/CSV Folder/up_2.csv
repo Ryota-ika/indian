@@ -1,0 +1,5 @@
+Corner_RightUp,straight_Tate,Void_Pos,straight_Tate
+Void_Pos,straight_Yoko,straight_Tate,Void_Pos
+straight_Tate,Corner_LeftUp,Void_Pos,straight_Tate
+straight_Tate,straight_Tate,Void_Pos,Corner_LeftDown
+straight_Tate,Corner_RightDown,straight_Yoko,Void_Pos

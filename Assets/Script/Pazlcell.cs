@@ -50,12 +50,14 @@ public class Pazlcell : MonoBehaviour
 	//ここは分かりづらくなってしまったので後で自動化できないか試します。
 	List<SensingPazl> pieces_List = new List<SensingPazl>();
     //8月追加
-    [SerializeField]
-    GameObject playerIcon; // プレイヤーの位置を示す2DオブジェクトをInspectorから関連付けます
+   /* [SerializeField]
+    GameObject playerIcon; // プレイヤーの位置を示す2DオブジェクトをInspectorから関連付けます*/
     private Vector2Int playerPosition; // プレイヤーの位置情報を格納する変数
     [Header("プレイヤーのTransform")]
     public Transform playerIconpos; // プレイヤーのTransform
-
+	[SerializeField]
+	private GameObject icon;
+	public MapSetPlayer set;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -225,10 +227,24 @@ public class Pazlcell : MonoBehaviour
 				}
 			}
 		}
-    }
+		if (icon != null)
+		{
+			if (pieces_List.Count > 0 && pieces_List[set.nearestObjectIndex] != null)
+			{
+			
+				icon.transform.position = pieces_List[set.nearestObjectIndex].transform.position;
+
+			}
+			else
+			{
+				// アイコンが存在する場合、アイコンの位置を更新
+				icon.transform.position = pieces_List[set.nearestObjectIndex].transform.position;
+			}
+		}
+	}
 
 
-    private void OnPlayerMoved(Vector2Int newPosition)
+  /*  private void OnPlayerMoved(Vector2Int newPosition)
     {
         Debug.Log("プレイヤーの位置が更新されました: " + newPosition);
         // プレイヤーの位置を更新
@@ -237,7 +253,7 @@ public class Pazlcell : MonoBehaviour
         // プレイヤーの位置に2Dオブジェクトを移動
         Vector3 playerIconPosition = new Vector3(playerPosition.x * movePow, 0, playerPosition.y * movePow);
         playerIcon.transform.position = playerIconPosition;
-    }
+    }*/
 
 }
 

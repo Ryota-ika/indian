@@ -50,6 +50,7 @@ public class PlayerCtrl : MonoBehaviour
         }else if(turnLeft){
             MoveTurnLeft();
         }
+      
     }
 
     public void MovePlayer()
@@ -85,7 +86,7 @@ public class PlayerCtrl : MonoBehaviour
         else
         {
             turnRight = false;
-
+            timer = 0;
         }
     }
 
@@ -110,7 +111,7 @@ public class PlayerCtrl : MonoBehaviour
         else
         {
             turnLeft = false;
-
+            timer = 0;
         }
     }
 
