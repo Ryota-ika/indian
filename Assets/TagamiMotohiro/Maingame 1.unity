@@ -52789,6 +52789,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1701694417}
     - target: {fileID: 5288783186838962777, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
+      propertyPath: obstacleCar
+      value: 
+      objectReference: {fileID: 575277457}
+    - target: {fileID: 5288783186838962777, guid: 82556f4a3376e86479dffcdc61d977ac, type: 3}
       propertyPath: roadManager
       value: 
       objectReference: {fileID: 454004166}

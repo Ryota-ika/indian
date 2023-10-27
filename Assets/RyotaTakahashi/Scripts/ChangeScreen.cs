@@ -58,7 +58,8 @@ public class ChangeScreen : MonoBehaviour
 
             Panel.SetActive(true);
             //StartCoroutine(TransitionCreate(false));
-            playerCtrl.StopPlayer();
+            playerCtrl.moveSpeed = 7f;
+            //playerCtrl.StopPlayer();
 			isCoolDown = false;//panelがfalseになる場合、クールダウンを無くす
 			yield break;//クールダウンを続けないためにコルーチン終了
 		}

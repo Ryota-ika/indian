@@ -12,6 +12,7 @@ TagManager:
   - TurnLeft
   - Gole
   - start
+  - Car
   layers:
   - Default
   - TransparentFX

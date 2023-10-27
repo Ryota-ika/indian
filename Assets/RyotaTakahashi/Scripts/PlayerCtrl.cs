@@ -12,10 +12,12 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject button;
     [SerializeField] private GameObject goast;
+    [SerializeField] private GameObject obstacleCar;
     //現在の道のオブジェクト
     public float moveSpeed = 13f;
     private bool turnRight = false;
     private bool turnLeft = false;
+    private bool obstacleHit = false;
     private Quaternion cullentRotation;
     public Quaternion targetRotation;
     [SerializeField] private Vector3 center = Vector3.zero;
@@ -28,6 +30,9 @@ public class PlayerCtrl : MonoBehaviour
     private float leftRotationTime = 8f;
     private float rightRotationTime = 16f;
     private float curveAngle = 90f;
+    private float targetDistance = 5f;
+    private float obstacleHitTime = 2.0f;//減速する時間
+    private float originalSpeed;
 
     [SerializeField] private DeathLineControll deathLineControll;
 
@@ -47,10 +52,36 @@ public class PlayerCtrl : MonoBehaviour
         if (turnRight)
         {
             MoveTurnRight();
-        }else if(turnLeft){
+        }
+        else if (turnLeft)
+        {
             MoveTurnLeft();
         }
-      
+        ObstaclePlayer();
+    }
+
+    private void ObstaclePlayer()
+    {
+        if (!obstacleHit)
+        {
+            float distance = Vector3.Distance(transform.position, obstacleCar.transform.position);
+            if (distance < targetDistance)
+            {
+                //障害物に当たったら速度を減速
+                originalSpeed = moveSpeed;
+                moveSpeed = 7f;
+                obstacleHit = true;
+                StartCoroutine(ResetSpeedAfterDelay(obstacleHitTime));
+            }
+        }
+    }
+
+    //減速時間が経過したら速度を元に戻すコルーチン
+    private IEnumerator ResetSpeedAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        moveSpeed = originalSpeed;//元の速度に戻す
+        obstacleHit = false;
     }
 
     public void MovePlayer()
@@ -64,7 +95,7 @@ public class PlayerCtrl : MonoBehaviour
     }*/
 
 
-   public void MoveTurnRight()
+    public void MoveTurnRight()
     {
         //1回だけ処理する
         if (timer <= 0)
@@ -80,8 +111,8 @@ public class PlayerCtrl : MonoBehaviour
         {
             //通常の円運動
             timer += Time.deltaTime;
-            player.transform.rotation = Quaternion.Lerp(cullentRotation, rightRotation, 
-                (timer/curveCompleteTime)*(timer / curveCompleteTime));
+            player.transform.rotation = Quaternion.Lerp(cullentRotation, rightRotation,
+                (timer / curveCompleteTime) * (timer / curveCompleteTime));
         }
         else
         {
@@ -98,15 +129,15 @@ public class PlayerCtrl : MonoBehaviour
             //Debug.Log("transform.rotation" + player.transform.rotation.ToString());
             //leftRotation = Quaternion.FromToRotation(player.transform.forward, new Vector3(transform.right.x*(-1.0f), transform.right.y * (-1.0f), transform.right.z * (-1.0f)));
             cullentRotation = transform.rotation;
-            leftRotation = Quaternion.AngleAxis(-curveAngle, Vector3.up)*transform.rotation;
-            Debug.Log("-transformright"+(-transform.right).ToString());
-         
+            leftRotation = Quaternion.AngleAxis(-curveAngle, Vector3.up) * transform.rotation;
+            Debug.Log("-transformright" + (-transform.right).ToString());
+
         }
         if (timer <= curveCompleteTime)
         {
             //通常の円運動
             timer += Time.deltaTime;
-            player.transform.rotation = Quaternion.Lerp(cullentRotation, leftRotation, timer/curveCompleteTime);
+            player.transform.rotation = Quaternion.Lerp(cullentRotation, leftRotation, timer / curveCompleteTime);
         }
         else
         {
@@ -119,6 +150,11 @@ public class PlayerCtrl : MonoBehaviour
     {
         moveSpeed = 0f;
     }
+
+    //public void HalfPlayer()
+    //{
+    //    moveSpeed
+    //}
 
     private void OnCollisionStay(Collision collision)
     {
