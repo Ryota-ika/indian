@@ -57,56 +57,64 @@ public class GoastClossing : MonoBehaviour
     {
         float distance = Vector3.Distance(player.position,goast.transform.position);
         state = GetDistanceState(distance);
-        switch (state)
-		{
-            //近づき具合に応じて幽霊の手の状態を変化
-            case DISTANCE_STATE.DISTANTE:
-                leftHand.gameObject.transform.position = leftHandPositions[0].position;
-                rightHand.gameObject.transform.position = rightHandPositions[0].position;
-                blood.gameObject.SetActive(false);
-                break;
-            case DISTANCE_STATE.CLOSED:
-                leftHand.gameObject.transform.position = leftHandPositions[1].position;
-                rightHand.gameObject.transform.position = rightHandPositions[1].position;
-                blood.sprite = bloodImages[0];
-				blood.gameObject.SetActive(true);
-				break;
-            case DISTANCE_STATE.VELY_CLOSED:
-                leftHand.gameObject.transform.position = leftHandPositions[2].position;
-                rightHand.gameObject.transform.position = rightHandPositions[2].position;
-                blood.sprite = bloodImages[1];
-				blood.gameObject.SetActive(true);
-				break;
-            case DISTANCE_STATE.CLOSEST:
-                leftHand.gameObject.transform.position = leftHandPositions[3].position;
-                rightHand.gameObject.transform.position = rightHandPositions[3].position;
-                blood.sprite= bloodImages[2];
-				blood.gameObject.SetActive(true);
-				break;
-        }
-        if (state != DISTANCE_STATE.DISTANTE)
+        if (leftHand != null && rightHand != null)
         {
-            if (!voicePlaing)
+            switch (state)
             {
-                voicePlaing = true;
-                StartCoroutine(playVoice());
+                //近づき具合に応じて幽霊の手の状態を変化
+                case DISTANCE_STATE.DISTANTE:
+                    leftHand.gameObject.transform.position = leftHandPositions[0].position;
+                    rightHand.gameObject.transform.position = rightHandPositions[0].position;
+                    blood.gameObject.SetActive(false);
+                    break;
+                case DISTANCE_STATE.CLOSED:
+                    leftHand.gameObject.transform.position = leftHandPositions[1].position;
+                    rightHand.gameObject.transform.position = rightHandPositions[1].position;
+                    blood.sprite = bloodImages[0];
+                    blood.gameObject.SetActive(true);
+                    break;
+                case DISTANCE_STATE.VELY_CLOSED:
+                    leftHand.gameObject.transform.position = leftHandPositions[2].position;
+                    rightHand.gameObject.transform.position = rightHandPositions[2].position;
+                    blood.sprite = bloodImages[1];
+                    blood.gameObject.SetActive(true);
+                    break;
+                case DISTANCE_STATE.CLOSEST:
+                    leftHand.gameObject.transform.position = leftHandPositions[3].position;
+                    rightHand.gameObject.transform.position = rightHandPositions[3].position;
+                    blood.sprite = bloodImages[2];
+                    blood.gameObject.SetActive(true);
+                    break;
             }
-        }else
-        {
-            voicePlaing=false;
+
+
+            if (state != DISTANCE_STATE.DISTANTE)
+            {
+                if (!voicePlaing)
+                {
+                    voicePlaing = true;
+                    StartCoroutine(playVoice());
+                }
+            }
+            else
+            {
+                voicePlaing = false;
+            }
+            float image_Alpha = 1 - (distance / goastApproach);
+            if (!isFading && distance < beforeDistance)
+            {//幽霊から離れ始めた場合のみ透明度を変化させてフェードアウト
+                ChengeAlpha(rightHand, image_Alpha);
+                ChengeAlpha(leftHand, image_Alpha);
+                isFading = true;
+            }
+            else if (isFading && distance >= beforeDistance)
+            {
+                ChengeAlpha(rightHand, 1);
+                ChengeAlpha(leftHand, 1);
+                isFading = false;
+            }
         }
-        float image_Alpha = 1 - (distance / goastApproach);
-        if (!isFading && distance < beforeDistance)
-        {//幽霊から離れ始めた場合のみ透明度を変化させてフェードアウト
-            ChengeAlpha(rightHand, image_Alpha);
-            ChengeAlpha(leftHand, image_Alpha);
-            isFading = true;
-        }
-        else if(isFading && distance >= beforeDistance){
-            ChengeAlpha(rightHand, 1);
-            ChengeAlpha(leftHand, 1);
-            isFading = false;
-        }
+
         beforeDistance = distance;
     }
     void ChengeAlpha(Image image, float alpha)
