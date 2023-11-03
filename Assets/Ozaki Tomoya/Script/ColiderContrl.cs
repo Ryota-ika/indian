@@ -41,5 +41,4 @@ public class ColiderContrl : MonoBehaviour
         collider.enabled = true; // コライダーを再び有効にする
         button.interactable = true;
     }
-  
 }
