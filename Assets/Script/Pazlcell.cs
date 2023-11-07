@@ -88,6 +88,7 @@ public class Pazlcell : MonoBehaviour
 		}
 		//リストから1個ずつ要素を抽出して2次元配列に代入しています
 		//これで疑似的にserialize化を実現してます
+		//Yの値が下からになっているのでVoidPosの位置がとりにくい
 		for (int y = maxMapSize.y - 1; y >= 0; y--)
 		{
 			for (int x = 0; x < maxMapSize.x; x++)
@@ -99,12 +100,14 @@ public class Pazlcell : MonoBehaviour
 					continue;
 				}
 				SensingPazl Piece = pieces_List[n];
-
 				Piece.Init(x, y, n + 1, ClickSwap);
 				pieces[x, y] = Piece;
 				n++;
+		
 			}
+
 		}
+		Debug.Log(pieces[voidPos.x,voidPos.y]);
 	}
 
 	void ClickSwap(int x, int y)//pieceと何もない空間を入れ替えて配列情報を更新
@@ -121,10 +124,11 @@ public class Pazlcell : MonoBehaviour
 
 		// 入れ替わった位置を引数としてトリガーを発行
 		swapTrrigerd.Invoke(new Vector2Int(x, y), new Vector2Int(x + PieceX, y + PieceY));
-
+		Debug.Log("X:"+x+"Y:"+y);
 	}
 	int GetPieceX(int x, int y)//引数で指定したところに隙間があったら移動させるための数値を返す
 	{
+		//自分の位置と入れ変えてしまう
 		if (x < maxMapSize.x - 1)
 		{
 			if (pieces[x + 1, y] == null)
@@ -152,7 +156,7 @@ public class Pazlcell : MonoBehaviour
 				return 1;
 			}
 		}
-
+		
 		if (y > 0)
 		{
 			if (pieces[x, y - 1] == null)

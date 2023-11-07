@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 1b215ac9234594d2b9f3a6b69b14e4fe, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 56779001cb00915499bdcf7de68093ef, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.043847494, g: 0.07874388, b: 0.15197772, a: 1}
+  m_IndirectSpecularColor: {r: 0.6013548, g: 0.6960481, b: 0.80963516, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -417,6 +417,11 @@ MonoBehaviour:
   Maxindex: 20
   posIndex: {x: 0, y: 0}
   MovePossible: 10
+--- !u!1 &94202938 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6716436944382879667, guid: daecdb632ef00364d92d6fd14ebbe3f5, type: 3}
+  m_PrefabInstance: {fileID: 619997524}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &172523955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1172,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 210685432}
     m_Modifications:
+    - target: {fileID: 1175523524264568643, guid: daecdb632ef00364d92d6fd14ebbe3f5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693006438038329742, guid: daecdb632ef00364d92d6fd14ebbe3f5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1853653391248274253, guid: daecdb632ef00364d92d6fd14ebbe3f5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2013498361134954882, guid: daecdb632ef00364d92d6fd14ebbe3f5, type: 3}
       propertyPath: m_Name
       value: Obstacles Corner R
@@ -1325,6 +1342,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3477242369183328387, guid: daecdb632ef00364d92d6fd14ebbe3f5, type: 3}
+    - {fileID: 1136041696680671090, guid: daecdb632ef00364d92d6fd14ebbe3f5, type: 3}
+    - {fileID: 7367701868037958079, guid: daecdb632ef00364d92d6fd14ebbe3f5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: daecdb632ef00364d92d6fd14ebbe3f5, type: 3}
 --- !u!1 &622107139
 GameObject:
@@ -3194,7 +3213,7 @@ MonoBehaviour:
   m_EventMask:
     serializedVersion: 2
     m_Bits: 8
-  m_MaxRayIntersections: 0
+  m_MaxRayIntersections: 1
 --- !u!1001 &1677540588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4773,7 +4792,7 @@ MonoBehaviour:
   player: {fileID: 2041605636}
   button: {fileID: 1701694417}
   goast: {fileID: 723848990}
-  obstacleCar: {fileID: 0}
+  obstacleCar: {fileID: 94202938}
   moveSpeed: 13
   targetRotation: {x: 0, y: 0, z: 0, w: 0}
   center: {x: 0, y: 0, z: 0}

@@ -193,7 +193,7 @@ public class PlayerCtrl : MonoBehaviour
         {
             button.SetActive(true);
             goast.SetActive(true);
-            Debug.Log("スタート");
+          //  Debug.Log("スタート");
             StartCoroutine(deathLineControll.StartCount());
             StartCoroutine(deathLineControll.GetPlayerPos());
         }
