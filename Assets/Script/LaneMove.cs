@@ -33,9 +33,10 @@ public class LaneMove : MonoBehaviour
     void Update()
     {
         //ƒ^ƒbƒ`“ü—Í
-        if (Input.touchCount > 0)
+        if (/*Input.touchCount > 0*/Input.GetKeyDown(KeyCode.Space))
         {
             Touch touch = Input.GetTouch(0);
+
             switch (touch.phase)
             {
                 case TouchPhase.Began:
