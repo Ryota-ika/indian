@@ -33,38 +33,41 @@ public class LaneMove : MonoBehaviour
     void Update()
     {
         //ƒ^ƒbƒ`“ü—Í
-        if (/*Input.touchCount > 0*/Input.GetKeyDown(KeyCode.Space))
-        {
-            Touch touch = Input.GetTouch(0);
-
-            switch (touch.phase)
+        
+            if (Input.touchCount > 0)
             {
-                case TouchPhase.Began:
-                    initialTouchPosition = touch.position;
-                    isSwiping = true;
-                    break;
-                case TouchPhase.Moved:
-                    lastTouchPosition = touch.position;
-                    break;
+                Touch touch = Input.GetTouch(0);
+
+                switch (touch.phase)
+                {
+                    case TouchPhase.Began:
+                        initialTouchPosition = touch.position;
+                        isSwiping = true;
+                        break;
+                    case TouchPhase.Moved:
+                        lastTouchPosition = touch.position;
+                        break;
                     case TouchPhase.Ended:
-                    if (isSwiping)
-                    {
-                        float swipeDistance = (lastTouchPosition.x - initialTouchPosition.x) / Screen.width;
-                        if (swipeDistance > 0.1f && nowLane == LANE_STATE.LEFT && !laneChangeNow)
+                        if (isSwiping==true)
                         {
-                            StartCoroutine(ChangeLane(rightLanePos.position,laneMoveTime));
-                            nowLane = LANE_STATE.RIGHT;
+                            float swipeDistance = (lastTouchPosition.x - initialTouchPosition.x) / Screen.width;
+                            if (swipeDistance > 0.1f && nowLane == LANE_STATE.LEFT && !laneChangeNow)
+                            {
+                                
+                                StartCoroutine(ChangeLane(rightLanePos.position, laneMoveTime));
+                                nowLane = LANE_STATE.RIGHT;
+                            }
+                            else if (swipeDistance < -0.1f && nowLane == LANE_STATE.RIGHT && !laneChangeNow)
+                            {
+                         
+                                StartCoroutine(ChangeLane(leftLanePos.position, laneMoveTime));
+                                nowLane = LANE_STATE.LEFT;
+                            }
+                            isSwiping = false;
                         }
-                        else if (swipeDistance < -0.1f &&  nowLane == LANE_STATE.RIGHT && !laneChangeNow)
-                        {
-                            StartCoroutine(ChangeLane(leftLanePos.position,laneMoveTime));
-                            nowLane = LANE_STATE.LEFT;
-                        }
-                        isSwiping = false;
-                    }
-                    break;
+                        break;
+                }
             }
-        }
     }
 
     IEnumerator ChangeLane(Vector3 targetPos,float moveTime) {

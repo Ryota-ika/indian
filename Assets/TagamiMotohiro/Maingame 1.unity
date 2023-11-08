@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.006570043, g: 0.10702073, b: 0.23284096, a: 1}
+  m_IndirectSpecularColor: {r: 0.0065700184, g: 0.10702068, b: 0.23284116, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7914,7 +7914,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightLanePos: {fileID: 1390965455}
   leftLanePos: {fileID: 267838559}
-  laneMoveTime: 0.01
+  laneMoveTime: 0.1
+--- !u!114 &1531041659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531041656}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbfec27df6647a44c9597411f5f96e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightLanePos: {fileID: 1390965455}
+  leftLanePos: {fileID: 267838559}
+  laneMoveTime: 0.1
 --- !u!1001 &1539659148
 PrefabInstance:
   m_ObjectHideFlags: 0
