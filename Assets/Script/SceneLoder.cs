@@ -9,7 +9,7 @@ public class SceneLoder : MonoBehaviour
 		SceneManager.LoadScene("Maingame");
 	}
 	public void LoadTitle() {
-		SceneManager.LoadScene("Title");
+		SceneManager.LoadScene("Start");
 	}
 	public void LoadResult() {
 		SceneManager.LoadScene("Result");
@@ -17,5 +17,10 @@ public class SceneLoder : MonoBehaviour
     public void LoadClear()
     {
         SceneManager.LoadScene("GameClear");
+    }
+	public void NextGame()
+	{
+		SceneManager.LoadScene("Maingame 1");
+
     }
 }

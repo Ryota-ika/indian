@@ -49,6 +49,7 @@ public class InitPieces : EditorWindow
 			while (reader.Peek() != -1) // reader.Peaekが-1になるまで
 			{
 				string line = reader.ReadLine(); // 一行ずつ読み込み
+				Debug.Log(line.Split(",").Length);
 				mapDataTextList.Add(line.Split(",")); // , 区切りでリストに追加
 			}
 			//マネージャー取得
@@ -69,10 +70,10 @@ public class InitPieces : EditorWindow
 				for (int x = 0; x < row; x++)
 				{
 					string prefubName = mapDataTextList[x][z];
+					Debug.Log(prefubName);
 					GameObject road = Resources.Load(prefubName) as GameObject;
 					GameObject g = Instantiate(road,new Vector3(x*road_Scale,0,z*road_Scale),road.transform.rotation);
 					Debug.Log(new Vector2Int(x,z));
-					Debug.Log(mapDataTextList[x][z]);
 					roads[n] = g;
 					roadScript.AddToRoadList(roads[n]);
 					if (prefubName=="Void_Pos") {

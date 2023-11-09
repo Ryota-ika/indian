@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaneMove : MonoBehaviour//§ì’S“–@“cã@ƒvƒŒƒCƒ„[‚ª¶‰E‚ÌŽÔü‚ðˆÚ“®‚·‚éƒXƒNƒŠƒvƒg
+public class LaneMove : MonoBehaviour
 {
     public enum LANE_STATE { 
         RIGHT,
@@ -19,6 +19,10 @@ public class LaneMove : MonoBehaviour//§ì’S“–@“cã@ƒvƒŒƒCƒ„[‚ª¶‰E‚ÌŽÔü‚ðˆ
     [SerializeField]
     float laneMoveTime;
     bool laneChangeNow=false;
+
+    private Vector3 initialTouchPosition;
+    private Vector3 lastTouchPosition;
+    private bool isSwiping = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,26 +32,49 @@ public class LaneMove : MonoBehaviour//§ì’S“–@“cã@ƒvƒŒƒCƒ„[‚ª¶‰E‚ÌŽÔü‚ðˆ
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)&&!laneChangeNow)
-		{
-            if (nowLane == LANE_STATE.RIGHT) 
+        //ƒ^ƒbƒ`“ü—Í
+        
+            if (Input.touchCount > 0)
             {
-                StartCoroutine(ChangeLane(leftLanePos.position,laneMoveTime));
-                nowLane = LANE_STATE.LEFT;
+                Touch touch = Input.GetTouch(0);
+
+                switch (touch.phase)
+                {
+                    case TouchPhase.Began:
+                        initialTouchPosition = touch.position;
+                        isSwiping = true;
+                        break;
+                    case TouchPhase.Moved:
+                        lastTouchPosition = touch.position;
+                        break;
+                    case TouchPhase.Ended:
+                        if (isSwiping==true)
+                        {
+                            float swipeDistance = (lastTouchPosition.x - initialTouchPosition.x) / Screen.width;
+                            if (swipeDistance > 0.1f && nowLane == LANE_STATE.LEFT && !laneChangeNow)
+                            {
+                                
+                                StartCoroutine(ChangeLane(rightLanePos.position, laneMoveTime));
+                                nowLane = LANE_STATE.RIGHT;
+                            }
+                            else if (swipeDistance < -0.1f && nowLane == LANE_STATE.RIGHT && !laneChangeNow)
+                            {
+                         
+                                StartCoroutine(ChangeLane(leftLanePos.position, laneMoveTime));
+                                nowLane = LANE_STATE.LEFT;
+                            }
+                            isSwiping = false;
+                        }
+                        break;
+                }
             }
-            else if (nowLane == LANE_STATE.LEFT)
-            {
-                StartCoroutine(ChangeLane(rightLanePos.position, laneMoveTime));
-                nowLane = LANE_STATE.RIGHT;
-			}
-		}
     }
 
     IEnumerator ChangeLane(Vector3 targetPos,float moveTime) {
         laneChangeNow = true;
         Vector3 pos = transform.position;
         float t = 0;
-        while (t<=1)
+        while (t <= 1)
         {
             Vector3 MovePos = Vector3.Lerp(pos, targetPos, 1 - Mathf.Pow(1 - t, 5));
             transform.position += MovePos-transform.position;
