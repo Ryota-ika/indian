@@ -23,7 +23,7 @@ public class test : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name== "Player 1")
+        if(other.gameObject.name== "Player")
         {
             obj.SetActive(true);
             ira.SetActive(true);
