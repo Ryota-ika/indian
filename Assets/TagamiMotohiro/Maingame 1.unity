@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0065700184, g: 0.10702068, b: 0.23284116, a: 1}
+  m_IndirectSpecularColor: {r: 0.006570043, g: 0.10702073, b: 0.23284096, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3642,7 +3642,7 @@ MonoBehaviour:
   player: {fileID: 691597031}
   button: {fileID: 1701694417}
   goast: {fileID: 723848990}
-  obstacleCar: {fileID: 575277457}
+  obstacleCar: {fileID: 1000013801073452, guid: 2f36652a93ba44cc1a5e79b7809b2662, type: 3}
   moveSpeed: 13
   targetRotation: {x: 0, y: 0, z: 0, w: 0}
   center: {x: 0, y: 0, z: 0}
@@ -4006,7 +4006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTime: 3
   speed: 10
-  player: {fileID: 144679213}
+  player: {fileID: 691597032}
   saveLate: 0.1
   maxPlayerDataNum: 3
 --- !u!135 &723848992
@@ -4080,7 +4080,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723848990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.63, y: 1.39, z: -44.46}
+  m_LocalPosition: {x: -2.63, y: 1.55, z: -41.32}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []

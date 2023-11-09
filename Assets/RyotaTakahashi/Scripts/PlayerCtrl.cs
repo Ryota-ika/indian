@@ -30,7 +30,7 @@ public class PlayerCtrl : MonoBehaviour
     private float leftRotationTime = 8f;
     private float rightRotationTime = 16f;
     private float curveAngle = 90f;
-    private float targetDistance = 5f;
+    private float targetDistance = 4f;
     private float obstacleHitTime = 2.0f;//Œ¸‘¬‚·‚éŽžŠÔ
     private float originalSpeed;
 
